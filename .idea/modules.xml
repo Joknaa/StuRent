@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StuRent.iml" filepath="$PROJECT_DIR$/StuRent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StuRent_JSP.iml" filepath="$PROJECT_DIR$/StuRent_JSP.iml" />
     </modules>
   </component>
 </project>
