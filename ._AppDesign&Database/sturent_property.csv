@@ -1,1 +1,5 @@
-Property_ID,Adress,City,MaxCapacity,AvailableCapacity,Price,Floor,Pictures
+Property_ID,Address,City,Max_Capacity,Available_Capacity,Price,Floor,Pictures
+2,Address2,City2,4,3,1000,1,
+3,Address3,City3,4,3,1000,1,
+4,Address4,City4,4,3,1000,1,
+5,Address5,City5,4,3,1000,1,
