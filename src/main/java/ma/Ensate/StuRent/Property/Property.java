@@ -1,16 +1,14 @@
-package ma.ensate.sturent;
+package ma.ensate.sturent.Property;
 
 import javax.persistence.*;
 
 @Entity(name = "property") // This tells Hibernate to make a table out of this class
-@Table(name = "property", schema = "student")
 public class Property {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int Property_ID;
     private String Address;
     private String City;
-    @Column(name = "MaxCapacity")
     private int MaxCapacity;
     private int AvailableCapacity;
     private int Price;
@@ -18,6 +16,14 @@ public class Property {
     public Property() { }
     public Property(int ID, String city, String address, int max, int available, int price) {
         setPropertyID(ID);
+        setCity(city);
+        setAddress(address);
+        setMaxCapacity(max);
+        setAvailableCapacity(available);
+        setPrice(price);
+    }
+    public Property(String city, String address, int max, int available, int price) {
+        setPropertyID(0);
         setCity(city);
         setAddress(address);
         setMaxCapacity(max);
