@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Add Offer</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../bootstrap_theme/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="img">
+        <img src="img/bg.svg" style="width: 352px; height: 305px;">
+    </div>
+    <div class="ADD-content">
+        <form action="#" th:action="@{/offer}" th:object="${offer}" method="post">
+            <h2 class="text-capitalize title">Add offer</h2>
+            <div class="input-div one text-capitalize">
+                <div class="i">
+                </div>
+                <div class="div">
+                    <h5>City</h5>
+                    <input type="text" class="input" th:field="*{City}" value>
+                </div>
+            </div>
+            <div class="input-div one text-capitalize">
+                <div class="i">
+                </div>
+                <div class="div">
+                    <h5>Adress</h5>
+                    <input type="text" class="input" th:field="*{Address}" >
+                </div>
+            </div>
+            <div class="input-div pass text-capitalize">
+                <div class="i">
+                </div>
+                <div class="div">
+                    <h5>gender</h5>
+                    <input type="text" class="input" th:field="*{Gender}" >
+                </div>
+            </div>
+            <div class="input-div pass text-capitalize">
+                <div class="i">
+                </div>
+                <div class="div">
+                    <h5>Price</h5>
+                    <input type="number" class="input" th:field="*{Price}" >
+                </div>
+            </div>
+            <div class="input-div pass text-capitalize">
+                <div class="i">
+                </div>
+                <div class="div">
+                    <h5>picture</h5>
+                    <input type="file" class="input">
+                </div>
+            </div>
+            <div class="input-div pass text-capitalize">
+                <div class="i">
+                </div>
+                <div class="div">
+                    <h5>Description</h5>
+                    <input type="text" class="input" th:field="*{Description}" >
+                </div>
+            </div>
+            <input type="submit" class="btn btn-light text-capitalize text-light" value="SUBMIT"
+                   style="border-radius: 25px;">
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

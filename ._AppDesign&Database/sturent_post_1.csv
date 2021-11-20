@@ -1,4 +1,0 @@
-Post_ID,User_ID,Property_ID,Title,Description,Availability
-1,1,1,post1,test,Available
-2,1,1,post2,,Available
-3,1,1,post3,,Available

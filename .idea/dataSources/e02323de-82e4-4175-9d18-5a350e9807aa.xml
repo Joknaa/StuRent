@@ -753,210 +753,133 @@ SELECT|sys.sys_config
     </table>
     <table id="233" parent="5" name="images"/>
     <table id="234" parent="5" name="post"/>
-    <table id="235" parent="5" name="property"/>
-    <table id="236" parent="5" name="request"/>
-    <table id="237" parent="5" name="users"/>
-    <column id="238" parent="232" name="next_val">
+    <table id="235" parent="5" name="users"/>
+    <column id="236" parent="232" name="next_val">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <column id="239" parent="233" name="Image_ID">
+    <column id="237" parent="233" name="Image_ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="240" parent="233" name="Property_ID">
+    <column id="238" parent="233" name="Post_ID">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="241" parent="233" name="Path">
+    <column id="239" parent="233" name="Path">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="242" parent="233" name="images_property_Property_ID_fk">
-      <ColNames>Property_ID</ColNames>
+    <index id="240" parent="233" name="images_post_Post_ID_fk">
+      <ColNames>Post_ID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="243" parent="233" name="PRIMARY">
+    <key id="241" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Image_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="244" parent="234" name="Post_ID">
+    <column id="242" parent="234" name="Post_ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="245" parent="234" name="User_ID">
+    <column id="243" parent="234" name="User_ID">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="246" parent="234" name="Property_ID">
+    <column id="244" parent="234" name="Title">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="247" parent="234" name="Title">
-      <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="248" parent="234" name="Description">
+    <column id="245" parent="234" name="Address">
+      <Position>4</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="246" parent="234" name="Gender">
       <Position>5</Position>
+      <DataType>enum(&apos;Male&apos;, &apos;Female&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="247" parent="234" name="Price">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="248" parent="234" name="Description">
+      <Position>7</Position>
       <DataType>varchar(100)|0s</DataType>
     </column>
-    <column id="249" parent="234" name="Availability">
-      <Position>6</Position>
-      <DataType>enum(&apos;Available&apos;, &apos;Unavailable&apos;)|0e</DataType>
-      <DefaultExpression>&apos;Available&apos;</DefaultExpression>
+    <column id="249" parent="234" name="Is_Available">
+      <Position>8</Position>
+      <DataType>tinyint(4)|0s</DataType>
+      <DefaultExpression>1</DefaultExpression>
     </column>
     <index id="250" parent="234" name="post_users_User_ID_fk">
       <ColNames>User_ID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="251" parent="234" name="post_property_Property_ID_fk">
-      <ColNames>Property_ID</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="252" parent="234" name="PRIMARY">
+    <key id="251" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Post_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="253" parent="235" name="Property_ID">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="254" parent="235" name="Address">
-      <Position>2</Position>
-      <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="255" parent="235" name="City">
-      <Position>3</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="256" parent="235" name="Max_Capacity">
-      <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
-    </column>
-    <column id="257" parent="235" name="Available_Capacity">
-      <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
-    </column>
-    <column id="258" parent="235" name="Price">
-      <Position>6</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="259" parent="235" name="Floor">
-      <Position>7</Position>
-      <DataType>int(11)|0s</DataType>
-    </column>
-    <key id="260" parent="235" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>Property_ID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="261" parent="236" name="Request_ID">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="262" parent="236" name="Post_ID">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="263" parent="236" name="Requester_ID">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="264" parent="236" name="Status">
-      <Position>4</Position>
-      <DataType>enum(&apos;Waiting&apos;, &apos;Accepted&apos;, &apos;Rejected&apos;)|0e</DataType>
-      <DefaultExpression>&apos;Waiting&apos;</DefaultExpression>
-    </column>
-    <index id="265" parent="236" name="request_post_Post_ID_fk">
-      <ColNames>Post_ID</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="266" parent="236" name="request_users_User_Name_fk">
-      <ColNames>Requester_ID</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="267" parent="236" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>Request_ID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="268" parent="237" name="User_Name">
+    <column id="252" parent="235" name="User_Name">
       <Position>1</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="269" parent="237" name="Email">
+    <column id="253" parent="235" name="Email">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="270" parent="237" name="Password">
+    <column id="254" parent="235" name="Password">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="271" parent="237" name="Gender">
+    <column id="255" parent="235" name="Gender">
       <Position>4</Position>
       <DataType>enum(&apos;Male&apos;, &apos;Female&apos;)|0e</DataType>
     </column>
-    <column id="272" parent="237" name="Phone">
+    <column id="256" parent="235" name="Phone">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="273" parent="237" name="Is_Admin">
+    <column id="257" parent="235" name="Is_Admin">
       <Position>6</Position>
       <DataType>tinyint(4)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <column id="274" parent="237" name="Is_Available">
-      <Position>7</Position>
-      <DataType>tinyint(4)|0s</DataType>
-      <DefaultExpression>1</DefaultExpression>
-    </column>
-    <index id="275" parent="237" name="users_User_Name_uindex">
+    <index id="258" parent="235" name="users_User_Name_uindex">
       <ColNames>User_Name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="276" parent="237" name="users_Email_uindex">
+    <index id="259" parent="235" name="users_Email_uindex">
       <ColNames>Email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="277" parent="237" name="PRIMARY">
+    <key id="260" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>User_Name</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="278" parent="237" name="users_User_Name_uindex">
+    <key id="261" parent="235" name="users_User_Name_uindex">
       <ColNames>User_Name</ColNames>
       <UnderlyingIndexName>users_User_Name_uindex</UnderlyingIndexName>
     </key>
-    <key id="279" parent="237" name="users_Email_uindex">
+    <key id="262" parent="235" name="users_Email_uindex">
       <ColNames>Email</ColNames>
       <UnderlyingIndexName>users_Email_uindex</UnderlyingIndexName>
     </key>
