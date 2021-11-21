@@ -81,7 +81,7 @@
             <div class="ADD-content">
 
 
-                <form action="/offer/Confirm" name="offer" th:OfferDTO="${offer}" method="post">
+                <form action="confirm" name="offer" th:OfferDTO="${offer}" method="post">
                     <h2 class="text-capitalize title" style="font-family: 'Titillium Web', sans-serif;">Ajouter une
                         Offre</h2>
                     <div class="input-div one text-capitalize">
@@ -164,13 +164,17 @@
                             <input type="file" class="bg-light input ">
                         </div>
                     </div>
-                    <a class="btn btn-lg btn-primary mt-4  pe-5 ps-5 rounded-pill text-white"
-                       href="../youry/landing_page.html"><span class="align-middle">Submit</span></a>
+                    <label class="align-middle">
+                        <input type="submit" class="btn btn-lg btn-primary mt-4  pe-5 ps-5 rounded-pill text-white" value="submit"/>
+                    </label>
+
+                    <!--a class="btn btn-lg btn-primary mt-4  pe-5 ps-5 rounded-pill text-white"
+                       th:href="@{/confirm}"><span class="align-middle">Submit</span></a-->
                 </form>
             </div>
         </div>
     </main>
 </div>
-<script type="text/javascript" src="../static/js/main.js"></script>
+<script type="text/javascript" th:src="@{/NIAA/js/main.js}"></script>
 </body>
 </html>

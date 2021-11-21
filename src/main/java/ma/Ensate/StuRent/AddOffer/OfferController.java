@@ -19,14 +19,15 @@ public class OfferController {
         return "AddOffer";
     }
 
-    @PostMapping("/Confirm")
+    @PostMapping("/confirm")
     public String getOfferAdditionSubmit(@ModelAttribute OfferDTO offerDTO, Model model) {
         Offer newOffer = Mapper.Map2Offer(offerDTO);
+        System.out.println(newOffer.ShowDetails());
         offerRepository.save(newOffer);
 
-        model.addAttribute("offer", newOffer.ShowDetails());
-        System.out.println(newOffer.ShowDetails());
-        return "AddOfferConfirmation";
+        //model.addAttribute("offer", newOffer.ShowDetails());
+        //System.out.println(newOffer.ShowDetails());
+        return "directory-listing-1";
     }
     /*
     @GetMapping("/Confirm")
