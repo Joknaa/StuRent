@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Pinegrow Web Editor - Directory Bootstrap v5 Template">
+    <meta name="author" content="">
+    <title>Pinegrow | Bootstrap Blocks Template</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/YOURY/bootstrap_theme/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/YOURY/blocks.css}" href="blocks.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/YOURY/style.css}" href="style.css" rel="stylesheet">
+</head>
+<body class="text-black-50">
+<header style="background-color: rgba(255, 255, 255, 0.6);" class="fixed-top">
+    <nav class="border-bottom navbar navbar-expand-lg navbar-light pb-lg-0 pt-lg-0">
+        <div class="container">
+            <a class="fw-bold navbar-brand text-secondary" href="#">StuRent</a>
+            <ul class="align-items-lg-center flex-row ms-auto me-2 me-lg-0 navbar-nav order-lg-2">
+                <li class="d-none d-sm-block nav-item">
+                    <a class="btn btn-primary btn-sm pe-4 ps-4 rounded-pill text-white" href="../Add/addoffer.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em"
+                             height="1.25em" class="me-2">
+                            <g>
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2h4zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/>
+                            </g>
+                        </svg>
+                        <span class="align-middle">Ajouter Offre</span></a>
+                </li>
+                <li class="ms-2 nav-item">
+                    <a class="btn btn-primary btn-sm p-2 rounded-pill text-white" href="directory-listing-1.html"
+                       aria-label="Search button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em"
+                             height="1.25em" class="d-block">
+                            <g>
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"></path>
+                            </g>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown-3"
+                    aria-controls="navbarNavDropdown-3" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown-3">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link px-lg-3 py-lg-4 text-secondary" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-lg-3 py-lg-4 text-secondary" href="#">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-lg-3 py-lg-4 text-secondary" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="align-items-lg-center ms-auto navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link px-lg-3 py-lg-4 text-secondary" href="../login/login_Signup.html">Se
+                            connecter/s&apos;inscriver&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="background-cover bg-dark  pb-5 position-relative pt-5 text-white"
+             style="background-image:url('https://images.unsplash.com/photo-1533130061792-64b345e4a833?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY2fHxtdXN0YW5nJTIwbmVwYWx8ZW58MHx8fA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <div class="container mt-5  pb-5 pt-5">
+            <div class="pb-5 pt-5 row">
+                <div class="col-lg-7 col-xl-6 col-xxl-5 pb-5 pt-5">
+                    <h1 class="display-3 fw-normal ">Trouvez la colocation parfaite pour vous !</h1>
+                    <p class="lead mb-5">Ici, tu peux trouver des amis incroyables et non seulement un colocataire!</p>
+                    <form>
+                        <div class="gx-2 row">
+                            <div class="col-sm mb-3">
+                                <input type="text" class="form-control form-control-lg ps-4 pe-4 rounded-pill"
+                                       placeholder="Qu'est ce que vous cherchez ?" style="color: #b3b3b3;">
+                            </div>
+                            <div class="col-sm-auto mb-3 text-end">
+                                <a href="directory-listing-1.html">
+                                    <button type="submit"
+                                            class="btn btn-lg btn-primary pe-4 ps-4 rounded-pill text-light">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.25em" height="1.25em" class="me-1">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                                <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"></path>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Chercher</span>&nbsp;
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mt-n5 pb-3 position-relative text-center" style="margin-top: -4rem;">
+        <div class="container ">
+        </div>
+    </section>
+    <section class="pb-5 pt-5">
+        <div class="container">
+            <div class="mb-4 text-center">
+                <h2 class="text-dark" style="margin-top:50px">Les colocations les meilleures notées</h2>
+            </div>
+            <div class="justify-content-center row">
+                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+                    <div class="border">
+                        <a href="#" class="d-block"><img
+                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
+                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <div class="pb-3 ps-4 pe-4 pt-4">
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.125em" height="1.125em" class="me-1 text-primary">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"/>
+                                                <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <span class="align-middle">2000 dhs</span>
+                                </div>
+                                <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
+                                <a href="directory-details-1.html">
+                                    <button type="button" class="btn btn-light rounded"
+                                            style="background-color: #2759eb; color: #d9e1ea;">Voir plus
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+                    <div class="border">
+                        <a href="#" class="d-block"><img
+                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
+                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <div class="pb-3 ps-4 pe-4 pt-4">
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.125em" height="1.125em" class="me-1 text-primary">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"/>
+                                                <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <span class="align-middle">2000 dhs</span>
+                                </div>
+                                <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
+                                <a href="directory-details-1.html">
+                                    <button type="button" class="btn btn-light rounded"
+                                            style="background-color: #2759eb; color: #d9e1ea;">Voir plus
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+                    <div class="border">
+                        <a href="#" class="d-block"><img
+                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
+                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <div class="pb-3 ps-4 pe-4 pt-4">
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.125em" height="1.125em" class="me-1 text-primary">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"/>
+                                                <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <span class="align-middle">2000 dhs</span>
+                                </div>
+                                <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
+                                <a href="directory-details-1.html">
+                                    <button type="button" class="btn btn-light rounded"
+                                            style="background-color: #2759eb; color: #d9e1ea;">Voir plus
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+                    <div class="border">
+                        <a href="#" class="d-block"><img
+                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
+                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <div class="pb-3 ps-4 pe-4 pt-4">
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.125em" height="1.125em" class="me-1 text-primary">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"/>
+                                                <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <span class="align-middle">2000 dhs</span>
+                                </div>
+                                <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
+                                <button type="button" class="btn btn-light rounded"
+                                        style="background-color: #2759eb; color: #d9e1ea;">Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+                    <div class="border">
+                        <a href="#" class="d-block"><img
+                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
+                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <div class="pb-3 ps-4 pe-4 pt-4">
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.125em" height="1.125em" class="me-1 text-primary">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"/>
+                                                <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <span class="align-middle">2000 dhs</span>
+                                </div>
+                                <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
+                                <button type="button" class="btn btn-light rounded"
+                                        style="background-color: #2759eb; color: #d9e1ea;">Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+                    <div class="border">
+                        <a href="#" class="d-block"><img
+                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
+                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <div class="pb-3 ps-4 pe-4 pt-4">
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.125em" height="1.125em" class="me-1 text-primary">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"/>
+                                                <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <span class="align-middle">2000 dhs</span>
+                                </div>
+                                <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
+                                <button type="button" class="btn btn-light rounded"
+                                        style="background-color: #2759eb; color: #d9e1ea;">Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+                    <div class="border">
+                        <a href="#" class="d-block"><img
+                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
+                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <div class="pb-3 ps-4 pe-4 pt-4">
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.125em" height="1.125em" class="me-1 text-primary">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"/>
+                                                <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <span class="align-middle">2000 dhs</span>
+                                </div>
+                                <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
+                                <button type="button" class="btn btn-light rounded"
+                                        style="background-color: #2759eb; color: #d9e1ea;">Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+                    <div class="border">
+                        <a href="#" class="d-block"><img
+                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
+                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <div class="pb-3 ps-4 pe-4 pt-4">
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.125em" height="1.125em" class="me-1 text-primary">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"/>
+                                                <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <span class="align-middle">2000 dhs</span>
+                                </div>
+                                <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
+                                <button type="button" class="btn btn-primary rounded"
+                                        style="background-color: #2759eb; color: #d9e1ea;">Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+                    <div class="border">
+                        <a href="#" class="d-block"><img
+                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
+                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <div class="pb-3 ps-4 pe-4 pt-4">
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             width="1.125em" height="1.125em" class="me-1 text-primary">
+                                            <g>
+                                                <path fill="none" d="M0 0h24v24H0z"/>
+                                                <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            </g>
+                                        </svg>
+                                        <span class="align-middle">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="pb-1 pt-1">
+                                    <span class="align-middle">2000 dhs</span>
+                                </div>
+                                <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
+                                <button type="button" class="btn btn-light rounded"
+                                        style="background-color: #2759eb; color: #d9e1ea;">Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pb-3 pt-3 text-center">
+                <a class="btn btn-primary pe-4 ps-4 rounded-pill text-white" href="directory-listing-1.html">View
+                    More</a>
+            </div>
+        </div>
+    </section>
+    <div class="container pb-4 pt-4">
+        <hr class="mb-0 mt-0"/>
+    </div>
+    <section class="pb-5 pt-5 text-center">
+        <div class="container">
+            <div class="mb-4">
+                <h2 class="text-dark">Comment ça marche ?</h2>
+            </div>
+            <div class="justify-content-center row">
+                <div class="col-lg-4 col-sm-6 pb-3 pt-3">
+                    <div class="border p-4 pb-5 ps-4 pe-4 pt-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="3rem"
+                             height="3rem" class="mb-4 text-primary">
+                            <g>
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15zm-3.847-8.699a2 2 0 1 0 2.646 2.646 4 4 0 1 1-2.646-2.646z"/>
+                            </g>
+                        </svg>
+                        <h3 class="h5 mb-3 text-dark">Trouver la collocation parfaite</h3>
+                        <p class="mb-0">StuRent t&apos;aidera à trouver la colocation idéale en quelques cliques.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 pb-3 pt-3">
+                    <div class="border p-4 pb-5 ps-4 pe-4 pt-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="3rem"
+                             height="3rem" class="mb-4 text-primary">
+                            <g>
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path fill-rule="nonzero"
+                                      d="M12 .5l4.226 6.183 7.187 2.109-4.575 5.93.215 7.486L12 19.69l-7.053 2.518.215-7.486-4.575-5.93 7.187-2.109L12 .5zm0 3.544L9.022 8.402 3.957 9.887l3.225 4.178-.153 5.275L12 17.566l4.97 1.774-.152-5.275 3.224-4.178-5.064-1.485L12 4.044zM10 12a2 2 0 1 0 4 0h2a4 4 0 1 1-8 0h2z"/>
+                            </g>
+                        </svg>
+                        <h3 class="h5 mb-3 text-dark">Facile à utiliser</h3>
+                        <p class="mb-0">Trouver la colocation de ses reves n&apos;a jamais été aussi facile!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 pb-3 pt-3">
+                    <div class="border pb-5 ps-4 pe-4 pt-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="3rem"
+                             height="3rem" class="mb-4 text-primary">
+                            <g>
+                                <path fill="none" d="M0 0H24V24H0z"/>
+                                <path d="M12 1l8.217 1.826c.457.102.783.507.783.976v9.987c0 2.006-1.003 3.88-2.672 4.992L12 23l-6.328-4.219C4.002 17.668 3 15.795 3 13.79V3.802c0-.469.326-.874.783-.976L12 1zm0 2.049L5 4.604v9.185c0 1.337.668 2.586 1.781 3.328L12 20.597l5.219-3.48C18.332 16.375 19 15.127 19 13.79V4.604L12 3.05zm4.452 5.173l1.415 1.414L11.503 16 7.26 11.757l1.414-1.414 2.828 2.828 4.95-4.95z"/>
+                            </g>
+                        </svg>
+                        <h3 class="h5 mb-3 text-dark">Sécurisé</h3>
+                        <p class="mb-0">Sturent vous accorde un accès très sécurisé&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-primary py-5 text-white">
+        <div class="container py-3">
+            <div class="align-items-center row">
+                <div class="col-lg-7">
+                    <h2 class="mb-3">Rejoignez notre communauté&nbsp;</h2>
+                    <p class="fw-light">StuRent est le site parfait pour vous si vous cherchez un colocataire à
+                        rejoindre en toute sécurité !</p>
+                </div>
+                <div class="col-lg-auto ms-auto">
+                    <a class="btn btn-outline-light ps-4 pe-4 rounded-pill" href="../login/login_Signup.html">Inscrivez-vous</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container pb-4 pt-4">
+        <hr class="mb-0 mt-0"/>
+    </div>
+    <section class="bg-light pb-5 pt-5 text-center">
+        <div class="container  pb-5 pt-5">
+            <div class="align-items-center row">
+                <div class="col-lg-7 ms-auto me-auto">
+                    <h2 class="text-dark">Postez votre annonce</h2>
+                    <p class="mb-4">Ajoutez une annonce et trouvez le colocataire qui vous convient en pleine sécurité
+                        !</p>
+                    <p class="mb-4"><a class="btn btn-primary pe-4 ps-4 rounded-pill text-white"
+                                       href="../Add/addoffer.html" style="font-family: var(--bs-font-sans-serif);">Ajoutez
+                        votre annonce</a><br></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="background-center-top background-cover bg-dark pb-5 pt-5 text-white-50"
+             style="background-image:url('https://images.unsplash.com/photo-1543691379-f2f5b144d593?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDkyMnwwfDF8c2VhcmNofDl8fG5pZ2h0JTIwbGlmZXxlbnwwfHx8&ixlib=rb-1.2.1&q=80&w=1080');">
+        <div class="container">
+            <div class="align-items-center justify-content-center row">
+                <div class="col-lg-3 col-sm-6 pb-3 pt-3">
+                    <div class="align-items-center d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="3rem"
+                             height="3rem" class="me-3 text-primary">
+                            <g>
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path d="M4 6.143v12.824l5.065-2.17 6 3L20 17.68V4.857l1.303-.558a.5.5 0 0 1 .697.46V19l-7 3-6-3-6.303 2.701a.5.5 0 0 1-.697-.46V7l2-.857zm12.243 5.1L12 15.485l-4.243-4.242a6 6 0 1 1 8.486 0zM12 12.657l2.828-2.829a4 4 0 1 0-5.656 0L12 12.657z"/>
+                            </g>
+                        </svg>
+                        <div>
+                            <h2 class="h4 mb-1 text-white">200+</h2>
+                            <p class="mb-0">Nouvelle annonce par jour</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 pb-3 pt-3">
+                    <div class="align-items-center d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="3rem"
+                             height="3rem" class="me-3 text-primary">
+                            <g>
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path d="M18 17v5h-2v-5c0-4.451 2.644-8.285 6.447-10.016l.828 1.82A9.002 9.002 0 0 0 18 17zM8 17v5H6v-5A9.002 9.002 0 0 0 .725 8.805l.828-1.821A11.002 11.002 0 0 1 8 17zm4-5a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            </g>
+                        </svg>
+                        <div>
+                            <h2 class="h4 mb-1 text-white">420+</h2>
+                            <p class="mb-0">Visiteurs par jour</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 pb-3 pt-3">
+                    <div class="align-items-center d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="3rem"
+                             height="3rem" class="me-3 text-primary">
+                            <g>
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path d="M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm6 10.5l-2.939 1.545.561-3.272-2.377-2.318 3.286-.478L18 14l1.47 2.977 3.285.478-2.377 2.318.56 3.272L18 21.5z"/>
+                            </g>
+                        </svg>
+                        <div>
+                            <h2 class="h4 mb-1 text-white">1600+</h2>
+                            <p class="mb-0">Client satisfait</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 pb-3 pt-3">
+                    <div class="align-items-center d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="3rem"
+                             height="3rem" class="me-3 text-primary">
+                            <g>
+                                <path fill="none" d="M0 0H24V24H0z"/>
+                                <path d="M12 1l8.217 1.826c.457.102.783.507.783.976v9.987c0 2.006-1.003 3.88-2.672 4.992L12 23l-6.328-4.219C4.002 17.668 3 15.795 3 13.79V3.802c0-.469.326-.874.783-.976L12 1zm0 2.049L5 4.604v9.185c0 1.337.668 2.586 1.781 3.328L12 20.597l5.219-3.48C18.332 16.375 19 15.127 19 13.79V4.604L12 3.05zm4.452 5.173l1.415 1.414L11.503 16 7.26 11.757l1.414-1.414 2.828 2.828 4.95-4.95z"/>
+                            </g>
+                        </svg>
+                        <div>
+                            <h2 class="h4 mb-1 text-white">4500+</h2>
+                            <p class="mb-0">Annonce vérifiée</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="bg-dark pt-5 text-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-xl-4 py-3">
+                <h2 class="h5 mb-4 text-primary">Contact us&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h2>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="text-white">Télephone</div>
+                        <p class="text-white">+ 212 5 22 21 99 58</p>
+                        <p class="text-white">E-mail</p>
+                        <p class="text-white">StuRent@gmail.com</p>
+                        <a href="https://library.pinegrow.com/bootstrap5/templates/directory/directory-details-1.html?pgedit=1&amp;pgpvid=3#"
+                           aria-label="facebook link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-xl-4 py-3">
+                <h2 class="h5 mb-4 text-primary">Abonnez-vous</h2>
+                <p class="mb-3 text-white">Abonnez-vous à notre newsletter et recevez des mises à jour exclusives
+                    directement dans votre boîte de réception.</p>
+                <form class="mb-4">
+                    <div class="bg-white border input-group overflow-hidden p-1 rounded-pill">
+                        <input type="email" class="border-0 form-control pe-3 ps-3" placeholder="Enter email..."
+                               aria-label="Recipient's email" aria-describedby="button-addon2" required="">
+                        <button class="btn btn-primary pb-2 pe-4 ps-4 pt-2 rounded-pill text-light" type="submit"
+                                id="button-addon2" aria-label="Submit">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="d-inline-block" height="16" width="16">
+                                <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <h2 class="h5 mb-3 text-primary">Visitez-nous</h2>
+                <div class="d-inline-flex flex-wrap">
+                    <a href="facebook.com" class="link-secondary p-1" aria-label="facebook link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" class="text-white">
+                            <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"></path>
+                        </svg>
+                    </a>
+                    <a href="Instagram.com" class="link-secondary p-1" aria-label="instagram link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" class="text-white">
+                            <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="link-secondary p-1" aria-label="linkedin link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" class="text-white">
+                            <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pb-3 pt-3 small">
+            <hr class="border-secondary mt-0">
+            <div class="align-items-center row">
+                <div class="col-md pb-2 pt-2 text-white">
+                    <p class="mb-0">&copy; 2021 - 2022 | All Rights Reserved - StuRent</p>
+                </div>
+                <div class="col-md-auto pb-2 pt-2 text-white">
+                    <a href="#" class="link-secondary text-decoration-none text-white">Privacy Policy</a> |
+                    <a href="#" class="link-secondary text-decoration-none text-white">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="assets/js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

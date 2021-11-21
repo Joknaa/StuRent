@@ -12,9 +12,9 @@ public class Mapper {
                 offerDTO.getDescription(),
                 offerDTO.getPrice(),
                 offerDTO.getGender(),
-                offerDTO.isHas_Wifi(),
-                offerDTO.isAllow_Pets(),
-                offerDTO.isAllow_Smoking()
+                offerDTO.getHas_Wifi(),
+                offerDTO.getAllow_Pets(),
+                offerDTO.getAllow_Smoking()
         );
     }
 }

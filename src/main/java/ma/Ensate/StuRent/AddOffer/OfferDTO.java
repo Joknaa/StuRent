@@ -2,8 +2,6 @@ package ma.ensate.sturent.AddOffer;
 
 import com.sun.istack.NotNull;
 
-import java.util.List;
-
 public class OfferDTO {
     @NotNull
     private Long Post_ID;
@@ -17,19 +15,12 @@ public class OfferDTO {
     private String Description;
     @NotNull
     private int Price;
+
     private String Has_Wifi;
     private String Allow_Pets;
     private String Allow_Smoking;
 
-    public String isHas_Wifi() {
-        return Has_Wifi;
-    }
-
-    public void setHas_Wifi(String has_Wifi) {
-        Has_Wifi = has_Wifi;
-    }
-
-    public String isAllow_Pets() {
+    public String getAllow_Pets() {
         return Allow_Pets;
     }
 
@@ -37,13 +28,24 @@ public class OfferDTO {
         Allow_Pets = allow_Pets;
     }
 
-    public String isAllow_Smoking() {
+    public String getAllow_Smoking() {
         return Allow_Smoking;
     }
 
     public void setAllow_Smoking(String allow_Smoking) {
         Allow_Smoking = allow_Smoking;
     }
+
+
+    public String getHas_Wifi() {
+        return Has_Wifi;
+    }
+
+    public void setHas_Wifi(String has_Wifi) {
+        Has_Wifi = has_Wifi;
+    }
+
+
 
 
     public Long getPost_ID() {

@@ -2,12 +2,12 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Add Offer</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link th:href="@{/NIAA/css/style.css}" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/blocks.css">
+    <link th:href="@{/NIAA/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/NIAA/css/blocks.css}" rel="stylesheet" />
 </head>
 <body>
 <header style="background-color: rgba(255, 255, 255, 0.6);" class="fixed-top">
@@ -75,8 +75,8 @@
     <main>
         <div class=" containerr mt-5 pt-5">
             <div class="img">
-                <img class="wave" src="img/wave.png">
-                <img src="img/bg.svg" width="0" height="372" class="" style="padding-right: 93px;">
+                <img class="wave" th:src="@{/NIAA/img/wave.png}">
+                <img th:src="@{/NIAA/img/bg.svg}" width="0" height="372" class="" style="padding-right: 93px;">
             </div>
             <div class="ADD-content">
 
@@ -171,6 +171,6 @@
         </div>
     </main>
 </div>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="../static/js/main.js"></script>
 </body>
 </html>
