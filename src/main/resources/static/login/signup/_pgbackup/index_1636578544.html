@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-        <link th:href="@{/NIAA/css/style2.css}" rel="stylesheet"/>
+        <link rel="stylesheet" href="style.css"/>
         <title>Sign in & Sign up Form</title>
     </head>
     <body>
@@ -22,6 +22,13 @@
                             <input type="password" placeholder="Password"/>
                         </div>
                         <input type="submit" value="Login" class="btn solid" style="background-color: #6860f9;"/>
+                        <p class="social-text">Or Sign in with social platforms</p>
+                        <div class="social-media">
+                            <a href="#" class="social-icon"> <i class="fab fa-facebook-f"></i> </a>
+                            <a href="#" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+                            <a href="#" class="social-icon"> <i class="fab fa-google"></i> </a>
+                            <a href="#" class="social-icon"> <i class="fab fa-linkedin-in"></i> </a>
+                        </div>
                     </form>
                     <form action="#" class="sign-up-form">
                         <h2 class="title">Sign up</h2>
@@ -42,6 +49,13 @@
                             <input type="password" placeholder="Confirm Password"/>
                         </div>
                         <input type="submit" class="btn" value="Sign up" style="background-color: #ca258c;"/>
+                        <p class="social-text">Or Sign up with social platforms</p>
+                        <div class="social-media">
+                            <a href="#" class="social-icon"> <i class="fab fa-facebook-f"></i> </a>
+                            <a href="#" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+                            <a href="#" class="social-icon"> <i class="fab fa-google"></i> </a>
+                            <a href="#" class="social-icon"> <i class="fab fa-linkedin-in"></i> </a>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -49,25 +63,29 @@
                 <div class="panel left-panel">
                     <div class="content">
                         <h3 style="margin-right: 28px;">New here ?</h3>
-                        <p style="margin-right: 28px;">Hello, Friend! Enter your personal details and start your journey with you.</p>
+                        <p style="margin-right: 28px;">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+              ex ratione. Aliquid! </p>
                         <button class="btn transparent" id="sign-up-btn" style="margin-right: 28px;">
                             Sign up
 </button>
                     </div>
-                    <img th:src="@{/NIAA/img/log.svg}" class="image" alt="" style="margin-bottom: -;"/>
+                    <img src="img/log.svg" class="image" alt="" style="margin-top: 9px; padding-bottom: 0px; margin-bottom: -68px;"/>
                 </div>
                 <div class="panel right-panel">
                     <div class="content">
-                        <h3>One Of Us</h3>
-                        <p>If you already have an account,just sign in. We&apos;ve missed you! </p>
+                        <h3>One of us ?</h3>
+                        <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              laboriosam ad deleniti. </p>
                         <button class="btn transparent" id="sign-in-btn" style="background-color: #ca258c;">
                             Sign in
 </button>
                     </div>
-                    <img th:src="@{/NIAA/img/register.svg}" class="image" alt=""/>
+                    <img src="img/register.svg" class="image" alt="" style="margin-top: 27px; margin-bottom: -74px;"/>
                 </div>
             </div>
         </div>
-        <script th:src="@{/NIAA/js/app.js}"></script>
+        <script src="app.js"></script>
     </body>
 </html>

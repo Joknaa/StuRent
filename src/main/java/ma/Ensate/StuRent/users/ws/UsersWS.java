@@ -17,7 +17,7 @@ import ma.Ensate.StuRent.users.beans.Users;
 import ma.Ensate.StuRent.users.service.UsersService;
 
 @Controller
-@RequestMapping("users")
+@RequestMapping("/")
 public class UsersWS {
 
 	@Autowired
@@ -44,13 +44,13 @@ public class UsersWS {
 
 	@GetMapping("/login")
 	public String login(@RequestParam(required = false) String user) {
-		System.out.print(user);
+		//System.out.print(user);
 		//System.out.print(password);
-		Users us = new Users();
-		us.setUsername(user);
-		us.setPassword("134553");
-		int login =usersService.login(us);
-		System.out.print(login);
+		//Users us = new Users();
+		//us.setUsername(user);
+		//us.setPassword("134553");
+		//int login =usersService.login(us);
+		//System.out.print(login);
 		return "login";
 	}
 	
