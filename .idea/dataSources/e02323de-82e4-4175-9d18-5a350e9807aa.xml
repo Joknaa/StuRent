@@ -794,10 +794,9 @@ SELECT|sys.sys_config
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="244" parent="234" name="Title">
+    <column id="244" parent="234" name="City">
       <Position>3</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
     </column>
     <column id="245" parent="234" name="Address">
       <Position>4</Position>
@@ -806,7 +805,7 @@ SELECT|sys.sys_config
     </column>
     <column id="246" parent="234" name="Gender">
       <Position>5</Position>
-      <DataType>enum(&apos;Male&apos;, &apos;Female&apos;)|0e</DataType>
+      <DataType>enum(&apos;Man&apos;, &apos;Woman&apos;)|0e</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="247" parent="234" name="Price">
@@ -818,68 +817,88 @@ SELECT|sys.sys_config
       <Position>7</Position>
       <DataType>varchar(100)|0s</DataType>
     </column>
-    <column id="249" parent="234" name="Is_Available">
+    <column id="249" parent="234" name="Has_Wifi">
       <Position>8</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="250" parent="234" name="Has_Water_Heater">
+      <Position>9</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="251" parent="234" name="Allow_Pets">
+      <Position>10</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="252" parent="234" name="Allow_Smoking">
+      <Position>11</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="253" parent="234" name="Is_Available">
+      <Position>12</Position>
       <DataType>tinyint(4)|0s</DataType>
       <DefaultExpression>1</DefaultExpression>
     </column>
-    <index id="250" parent="234" name="post_users_User_ID_fk">
+    <index id="254" parent="234" name="post_users_User_ID_fk">
       <ColNames>User_ID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="251" parent="234" name="PRIMARY">
+    <key id="255" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Post_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="252" parent="235" name="User_Name">
+    <column id="256" parent="235" name="User_Name">
       <Position>1</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="253" parent="235" name="Email">
+    <column id="257" parent="235" name="Email">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="254" parent="235" name="Password">
+    <column id="258" parent="235" name="Password">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="255" parent="235" name="Gender">
+    <column id="259" parent="235" name="Gender">
       <Position>4</Position>
       <DataType>enum(&apos;Male&apos;, &apos;Female&apos;)|0e</DataType>
     </column>
-    <column id="256" parent="235" name="Phone">
+    <column id="260" parent="235" name="Phone">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="257" parent="235" name="Is_Admin">
+    <column id="261" parent="235" name="Is_Admin">
       <Position>6</Position>
       <DataType>tinyint(4)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <index id="258" parent="235" name="users_User_Name_uindex">
+    <index id="262" parent="235" name="users_User_Name_uindex">
       <ColNames>User_Name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="259" parent="235" name="users_Email_uindex">
+    <index id="263" parent="235" name="users_Email_uindex">
       <ColNames>Email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="260" parent="235" name="PRIMARY">
+    <key id="264" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>User_Name</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="261" parent="235" name="users_User_Name_uindex">
+    <key id="265" parent="235" name="users_User_Name_uindex">
       <ColNames>User_Name</ColNames>
       <UnderlyingIndexName>users_User_Name_uindex</UnderlyingIndexName>
     </key>
-    <key id="262" parent="235" name="users_Email_uindex">
+    <key id="266" parent="235" name="users_Email_uindex">
       <ColNames>Email</ColNames>
       <UnderlyingIndexName>users_Email_uindex</UnderlyingIndexName>
     </key>

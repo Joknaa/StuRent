@@ -13,7 +13,7 @@
 <header style="background-color: rgba(255, 255, 255, 0.6);" class="fixed-top">
     <nav class="border-bottom navbar navbar-expand-lg navbar-light pb-lg-0 pt-lg-0">
         <div class="container">
-            <a class="fw-bold navbar-brand text-secondary" href="../youry/landing_page.html">StuRent</a>
+            <a class="fw-bold navbar-brand text-secondary" href="landing_page.html">StuRent</a>
             <ul class="align-items-lg-center flex-row ms-auto me-2 me-lg-0 navbar-nav order-lg-2">
                 <li class="d-none d-sm-block nav-item">
                     <a class="btn btn-primary btn-sm pe-4 ps-4 rounded-pill text-white"
@@ -28,8 +28,8 @@
                         <span class="align-middle">Ajouter Offre</span></a>
                 </li>
                 <li class="ms-2 nav-item">
-                    <a class="btn btn-primary btn-sm p-2 rounded-pill text-white"
-                       href="../youry/directory-listing-1.html" aria-label="Search button">
+                    <a class="btn btn-primary btn-sm p-2 rounded-pill text-white" href="directory-listing-1.html"
+                       aria-label="Search button">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em"
                              height="1.25em" class="d-block">
                             <g>
@@ -85,12 +85,20 @@
                     <h2 class="text-capitalize title" style="font-family: 'Titillium Web', sans-serif;">Ajouter une
                         Offre</h2>
                     <div class="input-div one text-capitalize">
-                        <div class="i">
-                        </div>
-                        <div class="div">
-                            <h5>Gender (Man / Woman)</h5>
-                            <input type="text" class="input" name="gender" th:field="*{offer.gender}" value/>
-                            <!--<input type="text" class="input">-->
+                        <div class="i"></div>
+                        <div class=" div ms-n4">
+                            <div class="mt-3 row" style="margin-left: 65px; margin-right: -83px;">
+                                <div class=" col-md-3 form-check me-5">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="formInput50" value="option1">
+                                    <label class="form-check-label text-muted" for="formInput50">Femme</label>
+                                </div>
+                                <div class="col-md-3 form-check">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="formInput60" value="option1">
+                                    <label class="form-check-label text-muted" for="formInput60">Homme</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="input-div one text-capitalize">
@@ -118,6 +126,7 @@
                             <h5>Prix</h5>
                             <input type="number" class="input" name="price" th:field="*{offer.price}"/>
                             <!--input type="number" class="input"-->
+
                         </div>
                     </div>
                     <div class="input-div pass text-capitalize">
@@ -129,32 +138,26 @@
                             <!--input type="text" class="input"-->
                         </div>
                     </div>
-                    <div class="input-div mt-4 one text-capitalize">
-                        <div class="i">
+                    <div class="mb-n4 row" style="margin-top: 35px; margin-left: 16px; margin-right: -58px;">
+                        <div class="col-sm-5 form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="formInput10" name="has_wifi" th:checked="${offer.has_Wifi}">
+                            <label class="form-check-label text-muted" for="formInput10">WIFI</label>
                         </div>
-                        <div class="div">
-                            <h5>WIFI (Yes / No)</h5>
-                            <input type="text" class="input" name="has_wifi" th:field="*{offer.has_Wifi}"/>
-                            <!--input type="text" class="input"-->
+                        <div class="col-sm-5 form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="formInput11" name="has_water_heater" th:checked="${offer.has_Water_Heater}">
+                            <label class="form-check-label text-muted" for="formInput11">Chauffe-eau</label>
                         </div>
+                        <div class="col-sm-5 form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="formInput12" name="allow_pets" th:checked="${offer.allow_Pets}">
+                            <label class="form-check-label text-muted" for="formInput12">Animaux</label>
+                        </div>
+                        <div class="col-sm-5 form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="formInput13" name="allow_smoking" th:checked="${offer.allow_Smoking}">
+                            <label class="form-check-label text-muted" for="formInput13">fumeur</label>
+                        </div>
+
                     </div>
-                    <div class="input-div one text-capitalize">
-                        <div class="i">
-                        </div>
-                        <div class="div">
-                            <h5>smoking (Yes / No)</h5>
-                            <input type="text" class="input" name="allow_smoking" th:field="*{offer.allow_Smoking}"/>
-                            <!--input type="text" class="input"-->
-                        </div>
-                    </div>
-                    <div class="input-div one text-capitalize">
-                        <div class="i">
-                        </div>
-                        <div class="div">
-                            <h5>Pets (yes / No)</h5>
-                            <input type="text" class="input" name="allow_pets" th:field="*{offer.allow_Pets}"/>
-                            <!--input type="text" class="input"-->
-                        </div>
+                    <div class="input-div  pass text-capitalize">
                     </div>
                     <div class="input-div pass text-capitalize">
                         <div class="i">
@@ -165,7 +168,7 @@
                         </div>
                     </div>
                     <a class="btn btn-lg btn-primary mt-4  pe-5 ps-5 rounded-pill text-white"
-                       href="../youry/landing_page.html"><span class="align-middle">Submit</span></a>
+                       href="../../youry/landing_page.html"><span class="align-middle">Submit</span></a>
                 </form>
             </div>
         </div>

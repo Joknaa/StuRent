@@ -15,3 +15,5 @@ create table users
 alter table users
     add primary key (User_Name);
 
+INSERT INTO sturent.users (User_Name, Email, Password, Gender, Phone, Is_Admin) VALUES ('Oknaa', 'Oknaa@kun.me', 'oknaa', 'Male', 708008065, 0);
+INSERT INTO sturent.users (User_Name, Email, Password, Gender, Phone, Is_Admin) VALUES ('Niaa', 'Niaa@ma.me', 'nia', 'Female', 689228833, 1);

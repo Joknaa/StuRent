@@ -16,7 +16,6 @@ import java.util.List;
 @RequestMapping(path = "/request")
 public class RequestController {
     @Autowired
-    
     private RequestRepository requestRepository;
 
     @GetMapping(path = "/add")

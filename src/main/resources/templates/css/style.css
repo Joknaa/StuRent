@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
 }
 
 .wave {
@@ -17,7 +16,7 @@ body {
     z-index: -1;
 }
 
-.container {
+.containerr {
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -29,7 +28,7 @@ body {
 .img {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: left;
 }
 
 .ADD-content {
@@ -164,28 +163,14 @@ a:hover {
     color: #4481eb;
 }
 
-.container:before {
-    content: "";
-    position: absolute;
-    height: 2000px;
-    width: 2000px;
-    top: -20%;
-    right: 48%;
-    transform: translateY(-50%);
-    background-image: linear-gradient(-45deg, #4481eb 0%, #ff0066 100%);
-    transition: 2.0s ease-in-out;
-    border-radius: 50%;
-    z-index: 6;
-}
-
-.btn {
+.btnn {
     display: block;
     width: 100%;
     height: 50px;
     border-radius: 25px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #4481eb, #4481eb, #ff0066);
+    background-image: linear-gradient(to right, #6c98e4, #4481eb, #ff0066);
     background-size: 200%;
     font-size: 1.2rem;
     color: #fff;
@@ -196,45 +181,52 @@ a:hover {
     transition: .5s;
 }
 
-.btn:hover {
+.btnn:hover {
     background-position: right;
 }
 
 @media screen and (max-width: 1050px){
-    .container {
+    .containerr {
         grid-gap: 5rem;
     }
 }
 
-@media screen and (max-width: 1000px){
-    form {
-        width: 290px;
+@media (max-width: 870px) {
+    .containerr {
+        min-height: 800px;
+        height: 100vh;
     }
 
-    .ADD-content h2 {
-        font-size: 2.4rem;
-        margin: 8px 0;
+    @media screen and (max-width: 1000px){
+        form {
+            width: 290px;
+        }
+
+        .ADD-content h2 {
+            font-size: 2.4rem;
+            margin: 8px 0;
+        }
+
+        .img img {
+            width: 400px;
+        }
     }
 
-    .img img {
-        width: 400px;
-    }
-}
+    @media screen and (max-width: 900px){
+        .containerr {
+            grid-template-columns: 1fr;
+        }
 
-@media screen and (max-width: 900px){
-    .container {
-        grid-template-columns: 1fr;
-    }
+        .img {
+            display: none;
+        }
 
-    .img {
-        display: none;
-    }
+        .wave {
+            display: none;
+        }
 
-    .wave {
-        display: none;
-    }
-
-    .ADD-content {
-        justify-content: center;
+        .ADD-content {
+            justify-content: center;
+        }
     }
 }
