@@ -19,7 +19,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="StuRent" />
-          <factory-entry name="entityManagerFactory" />
+          <factory-entry name="entityManagerFactory" value="e02323de-82e4-4175-9d18-5a350e9807aa" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
