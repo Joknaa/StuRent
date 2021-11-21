@@ -1,12 +1,12 @@
 package ma.ensate.sturent.AddOffer;
 
-import org.apache.catalina.User;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.List;
 
 @Entity(name = "post") // This tells Hibernate to make a table out of this class
-@Table(name = "post")
 public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -77,6 +77,6 @@ public class Offer {
     }
 
     public String ShowDetails() {
-        return String.format("%o | %o | %s | %s | %s | %d | %s | %s | %s | %s", Post_ID, User_ID, City, Address, Description, Price, Gender, Has_Wifi, Allow_Pets, Allow_Smoking);
+        return String.format("%s | %s | %s | %d | %s | %s | %s | %s", City, Address, Description, Price, Gender, Has_Wifi, Allow_Pets, Allow_Smoking);
     }
 }
