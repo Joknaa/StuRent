@@ -42,7 +42,7 @@ public class UsersWS {
 		usersService.deleteById(id);
 	}
 
-	@GetMapping("/home")
+	@GetMapping("/login")
 	public String login(@RequestParam(required = false) String user) {
 		System.out.print(user);
 		//System.out.print(password);
@@ -51,7 +51,7 @@ public class UsersWS {
 		us.setPassword("134553");
 		int login =usersService.login(us);
 		System.out.print(login);
-		return "home_page";
+		return "login";
 	}
 	
 	
