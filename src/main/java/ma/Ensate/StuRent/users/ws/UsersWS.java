@@ -48,13 +48,23 @@ public class UsersWS {
 		System.out.println(us.getEmail());
 		System.out.println(us.getPassword());
 		System.out.println(us.getPhone()+"test");
-		int testlogin= usersService.login(us);
-		   if (testlogin==1){
-		       return "landing_page";
-		   }else {
-			   //user = new Users();
-			   return "redirect:/login";
-		   }
+		if(us.getPhone()==0) {
+			int testlogin = usersService.login(us);
+			if (testlogin == 1) {
+				return "landing_page";
+			} else {
+				//user = new Users();
+				return "redirect:/login";
+			}
+		} else {
+			int testmail= usersService.save(us);
+			System.out.println(testmail);
+			if (testmail==1){
+				return "landing_page";
+			}else{
+				return "redirect:/login";
+			}
+		}
 		}
 
 

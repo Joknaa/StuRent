@@ -20,8 +20,8 @@ public class UsersService {
 	}
 
 	public int save(Users user) {
-		String username = user.getUsername();
-		Optional<Users> us= findById(username);
+		String mail = user.getEmail();
+		Optional<Users> us= findById(mail);
 		if(us.isEmpty()) {
 			usersDao.save(user);
 			return 1;
