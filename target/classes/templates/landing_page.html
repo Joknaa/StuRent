@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +9,9 @@
     <title>Pinegrow | Bootstrap Blocks Template</title>
     <!-- Bootstrap core CSS -->
     <link th:href="@{/YOURY/bootstrap_theme/bootstrap.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/YOURY/blocks.css}" href="blocks.css" rel="stylesheet">
+    <link th:href="@{/YOURY/blocks.css}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link th:href="@{/YOURY/style.css}" href="style.css" rel="stylesheet">
+    <link th:href="@{/YOURY/style.css}" rel="stylesheet">
 </head>
 <body class="text-black-50">
 <header style="background-color: rgba(255, 255, 255, 0.6);" class="fixed-top">
@@ -20,7 +20,7 @@
             <a class="fw-bold navbar-brand text-secondary" href="#">StuRent</a>
             <ul class="align-items-lg-center flex-row ms-auto me-2 me-lg-0 navbar-nav order-lg-2">
                 <li class="d-none d-sm-block nav-item">
-                    <a class="btn btn-primary btn-sm pe-4 ps-4 rounded-pill text-white" href="../offer/add">
+                    <a class="btn btn-primary btn-sm pe-4 ps-4 rounded-pill text-white" th:href="@{/offer/add}">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em"
                              height="1.25em" class="me-2">
                             <g>
@@ -65,7 +65,7 @@
                 </ul>
                 <ul class="align-items-lg-center ms-auto navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link px-lg-3 py-lg-4 text-secondary" href="../login">Se
+                        <a class="nav-link px-lg-3 py-lg-4 text-secondary" href="/login">Se
                             connecter/s&apos;inscriver&nbsp;</a>
                     </li>
                 </ul>
@@ -118,7 +118,8 @@
                 <h2 class="text-dark" style="margin-top:50px">Les colocations les meilleures notées</h2>
             </div>
             <div class="justify-content-center row">
-                <div class="col-lg-4 col-md-6 pb-3 pt-3">
+
+                <div th:each="offer: ${offers}" class="col-lg-4 col-md-6 pb-3 pt-3">
                     <div class="border">
                         <a href="#" class="d-block"><img
                                 src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
@@ -126,7 +127,7 @@
                         <div class="pb-3 ps-4 pe-4 pt-4">
                             <div class="align-items-center d-flex justify-content-between">
                                 <div class="pb-1 pt-1">
-                                    <a href="#" class="link-dark text-decoration-none"><h3 class="h5 mb-1">Name</h3></a>
+                                    <a href="#" class="link-dark text-decoration-none"><h3 th:text="*{offer.description}" class="h5 mb-1"></h3></a>
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                              width="1.125em" height="1.125em" class="me-1 text-primary">
@@ -135,14 +136,14 @@
                                                 <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                                             </g>
                                         </svg>
-                                        <span class="align-middle">Location</span>
+                                        <span th:text="${offer.address}" class="align-middle"></span>
                                     </div>
                                 </div>
                             </div>
                             <hr/>
                             <div class="align-items-center d-flex justify-content-between">
                                 <div class="pb-1 pt-1">
-                                    <span class="align-middle">2000 dhs</span>
+                                    <span th:text="${offer.price}" class="align-middle"></span>
                                 </div>
                                 <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
                                 <a href="directory-details-1.html">

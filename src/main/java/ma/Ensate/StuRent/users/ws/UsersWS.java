@@ -64,12 +64,6 @@ public class UsersWS {
 	}
 
 
-	@GetMapping("/")
-	public String home_page() {
-
-		return "landing_page";
-	}
-	
 	
 	
 	

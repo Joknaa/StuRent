@@ -38,6 +38,6 @@ public class Mapper {
         System.out.println("PostID is: " + offerDTO.getPost_ID());
         return new Image(
                 offerDTO.getPost_ID(),
-                ImagesFiles);
+                "test");
     }
 }
