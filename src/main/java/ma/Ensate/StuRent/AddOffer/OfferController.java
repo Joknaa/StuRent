@@ -1,5 +1,8 @@
 package ma.ensate.sturent.AddOffer;
 
+import ma.ensate.sturent.AddOffer.Image.Image;
+import ma.ensate.sturent.AddOffer.Image.ImageController;
+import ma.ensate.sturent.AddOffer.Image.ImageRepository;
 import ma.ensate.sturent.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +14,9 @@ import org.springframework.web.context.request.WebRequest;
 @RequestMapping(path = "/offer")
 public class OfferController {
     @Autowired
+
     private OfferRepository offerRepository;
+    private ImageRepository imageRepository;
 
     @GetMapping("/add")
     public String getOfferAdditionForm(WebRequest request, Model model) {
@@ -19,14 +24,21 @@ public class OfferController {
         return "AddOffer";
     }
 
-    @PostMapping("/Confirm")
+    @PostMapping("/confirm")
     public String getOfferAdditionSubmit(@ModelAttribute OfferDTO offerDTO, Model model) {
         Offer newOffer = Mapper.Map2Offer(offerDTO);
-        offerRepository.save(newOffer);
-
-        model.addAttribute("offer", newOffer.ShowDetails());
+        //Image offerImage = Mapper.Map2Image(offerDTO);
+        //System.out.println("Is Null : " + offerImage == null);
         System.out.println(newOffer.ShowDetails());
-        return "AddOfferConfirmation";
+
+        offerRepository.save(newOffer);
+        //imageRepository.save(offerImage);
+
+        ImageController imageController = new ImageController();
+        //imageController.SaveImages(offerDTO);
+
+        //model.addAttribute("offer", newOffer.ShowDetails());
+        return "landing_page";
     }
     /*
     @GetMapping("/Confirm")

@@ -4,7 +4,7 @@ import com.sun.istack.NotNull;
 
 public class OfferDTO {
     @NotNull
-    private Long Post_ID;
+    private Long Post_ID = 1L;
     @NotNull
     private Long User_ID;
     @NotNull
@@ -15,10 +15,15 @@ public class OfferDTO {
     private String Description;
     @NotNull
     private int Price;
-
     private String Has_Wifi;
     private String Allow_Pets;
     private String Allow_Smoking;
+    private String Images;
+
+
+    public String getImages() {return Images;}
+
+    public void setImages(String images) {Images = images;}
 
     public String getAllow_Pets() {
         return Allow_Pets;
@@ -44,8 +49,6 @@ public class OfferDTO {
     public void setHas_Wifi(String has_Wifi) {
         Has_Wifi = has_Wifi;
     }
-
-
 
 
     public Long getPost_ID() {
