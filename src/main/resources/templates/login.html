@@ -11,35 +11,41 @@
         <div class="container">
             <div class="forms-container">
                 <div class="signin-signup">
-                    <form action="/logconfirm" name="user" th:OfferDTO="${user}" method="post" class="sign-in-form">
+                    <form action="/login" name="user" th:OfferDTO="${user}" method="post" class="sign-in-form">
                         <h2 class="title">Sign in</h2>
                         <div class="input-field">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username" name="username" th:field="*{user.username}"/>
+                            <input required="required" type="text" placeholder="Email" name="email" th:field="*{user.email}"/>
+
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" name="password" th:field="*{user.password}"/>
+                            <input required="required" type="password" placeholder="Password" name="password" th:field="*{user.password}"/>
+
                         </div>
                         <input type="submit" value="Login" class="btn solid" style="background-color: #6860f9;"/>
                     </form>
-                    <form action="#" class="sign-up-form">
+                    <form action="/login" name="user" th:OfferDTO="${user}" method="post" class="sign-up-form">
                         <h2 class="title">Sign up</h2>
                         <div class="input-field">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username"/>
+                            <input required="required" type="text" placeholder="Username"/>
                         </div>
                         <div class="input-field">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" placeholder="Email"/>
+                            <input required="required" type="email" placeholder="Email"/>
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password"/>
+                            <input required="required" type="password" placeholder="Password"/>
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Confirm Password"/>
+                            <input required="required" type="password" placeholder="Confirm Password"/>
+                        </div>
+                        <div class="input-field">
+                            <i class="fas fa-address-book"></i>
+                            <input required="required" type="number" placeholder="Phone"/>
                         </div>
                         <input type="submit" class="btn" value="Sign up" style="background-color: #ca258c;"/>
                     </form>

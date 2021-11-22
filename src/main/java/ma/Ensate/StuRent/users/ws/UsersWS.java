@@ -1,5 +1,6 @@
 package ma.Ensate.StuRent.users.ws;
 
+
 import ma.Ensate.StuRent.users.beans.Users;
 import ma.Ensate.StuRent.users.service.UsersService;
 import ma.ensate.sturent.Mapper;
@@ -43,14 +44,22 @@ public class UsersWS {
 		System.out.println("model.getAttribute(	)");
 		return "login";
 	}
-	@PostMapping("/logconfirm")
+	@PostMapping("/login")
 	public String testconnexion(@ModelAttribute Users user, Model model){
 		Users us = Mapper.Map2User(user);
 		model.addAttribute("user", us.getUsername() + " & " + us.getPassword());
-		System.out.println(us.getUsername());
+		System.out.println(us.getEmail());
 		System.out.println(us.getPassword());
-		return "landing_page";
-	}
+		int testlogin= usersService.login(us);
+
+		   if (testlogin==1){
+		       return "landing_page";
+		   }else {
+			   //user = new Users();
+			   return "redirect:/login";
+		   }
+		}
+
 
 	@GetMapping("/")
 	public String home_page() {

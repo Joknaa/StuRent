@@ -9,8 +9,9 @@ import javax.persistence.Table;
 @Table(name="Users")
 public class Users {
 
-	@Id
+
 	private String username;
+	@Id
 	@Column(nullable= false)
 	private String email;
 	@Column(nullable= false)

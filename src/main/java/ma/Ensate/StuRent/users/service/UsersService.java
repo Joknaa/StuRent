@@ -44,7 +44,7 @@ public class UsersService {
 	}
 	
 	public int login (Users user) {
-		Optional<Users> us = findById(user.getUsername());
+		Optional<Users> us = findById(user.getEmail());
 		
 		if(us.isEmpty()) {
 			return 0;
