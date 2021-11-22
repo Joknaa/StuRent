@@ -11,15 +11,15 @@
         <div class="container">
             <div class="forms-container">
                 <div class="signin-signup">
-                    <form action="#" class="sign-in-form">
+                    <form action="/logconfirm" name="user" th:OfferDTO="${user}" method="post" class="sign-in-form">
                         <h2 class="title">Sign in</h2>
                         <div class="input-field">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Email" name=""/>
+                            <input type="text" placeholder="Username" name="username" th:field="*{user.username}"/>
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password"/>
+                            <input type="password" placeholder="Password" name="password" th:field="*{user.password}"/>
                         </div>
                         <input type="submit" value="Login" class="btn solid" style="background-color: #6860f9;"/>
                     </form>

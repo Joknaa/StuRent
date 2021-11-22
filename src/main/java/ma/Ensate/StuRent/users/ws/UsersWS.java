@@ -2,10 +2,12 @@ package ma.Ensate.StuRent.users.ws;
 
 import ma.Ensate.StuRent.users.beans.Users;
 import ma.Ensate.StuRent.users.service.UsersService;
+import ma.ensate.sturent.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
 
 import java.util.Optional;
 
@@ -36,10 +38,20 @@ public class UsersWS {
 	}
 
 	@GetMapping("/login")
-	public String login(@RequestParam(required = false) String user) {
-
+	public String login(WebRequest request, Model model) {
+		model.addAttribute("user", new Users());
+		System.out.println("model.getAttribute(	)");
 		return "login";
 	}
+	@PostMapping("/logconfirm")
+	public String testconnexion(@ModelAttribute Users user, Model model){
+		Users us = Mapper.Map2User(user);
+		model.addAttribute("user", us.getUsername() + " & " + us.getPassword());
+		System.out.println(us.getUsername());
+		System.out.println(us.getPassword());
+		return "landing_page";
+	}
+
 	@GetMapping("/")
 	public String home_page() {
 

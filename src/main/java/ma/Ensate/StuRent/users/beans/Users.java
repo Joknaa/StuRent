@@ -18,7 +18,16 @@ public class Users {
 	private String gender;
 	private int phone;
 	private int isAdmin;
-	
+
+	public Users(){}
+	public Users(String username,String email, String password,String gender, int phone,int isAdmin){
+		setUsername(username);
+		setEmail(email);
+		setPassword(password);
+		setGender(gender);
+		setPhone(phone);
+		setAdmin(isAdmin);
+	}
 	
 	public String getUsername() {
 		return username;
