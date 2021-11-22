@@ -24,10 +24,7 @@ public class UsersWS {
 		return usersService.findByUsername(username);
 	}
 
-	@PostMapping("/signup")
-	public int save(@RequestBody Users users) {
-		return usersService.save(users);
-	}
+
 
 	public Optional<Users> findById(String id) {
 		return usersService.findById(id);
@@ -50,8 +47,8 @@ public class UsersWS {
 		model.addAttribute("user", us.getUsername() + " & " + us.getPassword());
 		System.out.println(us.getEmail());
 		System.out.println(us.getPassword());
+		System.out.println(us.getPhone()+"test");
 		int testlogin= usersService.login(us);
-
 		   if (testlogin==1){
 		       return "landing_page";
 		   }else {
@@ -59,6 +56,12 @@ public class UsersWS {
 			   return "redirect:/login";
 		   }
 		}
+
+
+	@PostMapping("/signup")
+	public int save(@RequestBody Users users) {
+		return usersService.save(users);
+	}
 
 
 	@GetMapping("/")
