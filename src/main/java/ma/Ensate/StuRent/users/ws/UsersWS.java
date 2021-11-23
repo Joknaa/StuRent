@@ -1,7 +1,6 @@
 package ma.Ensate.StuRent.users.ws;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
 import ma.Ensate.StuRent.users.beans.Users;
 import ma.Ensate.StuRent.users.service.UsersService;
 import ma.Ensate.StuRent.Mapper;
@@ -37,24 +36,21 @@ public class UsersWS {
 	}
 
 	@GetMapping("/login")
-	public String login(WebRequest request, Model model , HttpSession session) {
+	public String login(WebRequest request, Model model) {
 		model.addAttribute("user", new Users());
 		System.out.println("model.getAttribute(	)");
 		return "login";
 	}
 	@PostMapping("/login")
-	public String testconnexion(@ModelAttribute Users user, Model model ,HttpServletRequest request){
+	public String testconnexion(@ModelAttribute Users user, Model model){
 		Users us = Mapper.Map2User(user);
 		model.addAttribute("user", us.getUsername() + " & " + us.getPassword());
-		/*System.out.println(us.getEmail());
+		System.out.println(us.getEmail());
 		System.out.println(us.getPassword());
-		System.out.println(us.getPhone()+"test");*/
+		System.out.println(us.getPhone()+"test");
 		if(us.getPhone()==0) {
 			int testlogin = usersService.login(us);
 			if (testlogin == 1) {
-				request.getSession().setAttribute("MY_SESSION_USERS", us.getEmail());
-				String messages = (String) request.getSession().getAttribute("MY_SESSION_USERS");
-				System.out.println(messages);
 				return "landing_page";
 			} else {
 				//user = new Users();
@@ -75,11 +71,6 @@ public class UsersWS {
 	@PostMapping("/signup")
 	public int save(@RequestBody Users users) {
 		return usersService.save(users);
-	}
-	@PostMapping("/destroy")
-	public String destroySession(HttpServletRequest request) {
-		request.getSession().invalidate();
-		return "landing_page";
 	}
 
 
