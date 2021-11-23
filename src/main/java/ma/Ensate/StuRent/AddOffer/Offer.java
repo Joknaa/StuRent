@@ -43,6 +43,14 @@ public class Offer {
         setAllow_Pets(allow_pets);
         setAllow_Smoking(allow_smoking);
     }
+    public Offer(String title, String city, int price, String has_wifi, String allow_pets, String allow_smoking) {
+        setTitle(title);
+        setCity(city);
+        setPrice(price);
+        setHas_Wifi(has_wifi);
+        setAllow_Pets(allow_pets);
+        setAllow_Smoking(allow_smoking);
+    }
 
 
     public Long getPostID(){return this.Post_ID;}

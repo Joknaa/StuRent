@@ -9,13 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class OfferController {
@@ -44,16 +42,39 @@ public class OfferController {
     }
 
     @PostMapping("/search")
-    public ModelAndView RunSearch(@ModelAttribute OfferDTO offerDTO) {
-        Offer searchOffer = Mapper.Map2Offer(offerDTO);
+    public ModelAndView RunSearch(@RequestParam(value = "houseOptions", required = false) String[] houseOption, WebRequest request) {
+        /*Offer searchOffer = Mapper.Map2Offer(offerDTO);*/
+
+        String[] houseOptions = request.getParameterValues("houseOptions");
+        String price = request.getParameter("price");
+        Offer searchOffer = new Offer(
+                request.getParameter("title"),
+                request.getParameter("city"),
+                Integer.parseInt(price ==  null || price.isEmpty() ? "0" : price),
+                Contains(houseOptions, "wifi") ? "yes" : "no",
+                Contains(houseOptions, "pets") ? "yes" : "no",
+                Contains(houseOptions, "smoking") ? "yes" : "no"
+        );
 
         List<Offer> targetOffers = FindTargetOffers(searchOffer);
+
         targetOffers.forEach(Offer::ShowDetails);
 
         ModelAndView model = new ModelAndView("directory-listing-1");
         model.addObject("offerSearch", new OfferDTO());
         model.addObject("offers", targetOffers);
+
+        System.out.println("smoking: " + Arrays.toString(houseOptions));
         return model;
+    }
+
+    private boolean Contains(String[] array, String element){
+        if (array == null) return false;
+
+        for (String e : array) {
+            if (e.compareToIgnoreCase(element) == 0) return true;
+        }
+        return false;
     }
 
     private List<Offer> FindTargetOffers(Offer searchOffer) {
@@ -71,27 +92,19 @@ public class OfferController {
             if (!searchOffer.getCity().isEmpty()) {
                 if (ThisOffer.getCity().compareToIgnoreCase(searchOffer.getCity()) == 0)
                     TargetOffersList.add(ThisOffer);
-            }
-            if (!searchOffer.getAddress().isEmpty()) {
-                if (ThisOffer.getAddress().compareToIgnoreCase(searchOffer.getAddress()) == 0)
-                    TargetOffersList.add(ThisOffer);
-            }
-            if (!searchOffer.getGender().isEmpty()) {
-                if (ThisOffer.getGender().compareToIgnoreCase(searchOffer.getGender()) == 0)
-                    TargetOffersList.add(ThisOffer);
-            }
+            } else
             if (!searchOffer.getHas_Wifi().isEmpty()) {
                 if (ThisOffer.getHas_Wifi().compareToIgnoreCase(searchOffer.getHas_Wifi()) == 0)
                     TargetOffersList.add(ThisOffer);
-            }
+            } else
             if (!searchOffer.getAllow_Pets().isEmpty()) {
                 if (ThisOffer.getAllow_Pets().compareToIgnoreCase(searchOffer.getAllow_Pets()) == 0)
                     TargetOffersList.add(ThisOffer);
-            }
+            } else
             if (!searchOffer.getAllow_Smoking().isEmpty()) {
                 if (ThisOffer.getAllow_Smoking().compareToIgnoreCase(searchOffer.getAllow_Smoking()) == 0)
                     TargetOffersList.add(ThisOffer);
-            }
+            } else
             if (searchOffer.getPrice() != 0) {
                 if (ThisOffer.getPrice() <= searchOffer.getPrice())
                     TargetOffersList.add(ThisOffer);

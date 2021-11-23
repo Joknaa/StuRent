@@ -90,7 +90,7 @@
                         <hr/>
                         <form action="" name="offer" th:OfferDTO="${offerSearch}" method="post">
                             <div class="input-group mb-3">
-                                <input th:field="*{offerSearch.title}" type="text" class="border-end-0 form-control p-3"
+                                <input name="title" type="text" class="border-end-0 form-control p-3"
                                        placeholder="Vous cherchez?"
                                        aria-label="Enter Keyword" aria-describedby="keyword-input">
                                 <span class="bg-white input-group-text pe-3 ps-3" id="keyword-input"><svg
@@ -103,7 +103,7 @@
                                             </svg></span>
                             </div>
                             <div class="input-group mb-3">
-                                <input th:field="*{offerSearch.city}" type="text" class="border-end-0 form-control p-3"
+                                <input type="text" name="city" class="border-end-0 form-control p-3"
                                        placeholder="Localisation"
                                        aria-label="Enter Location" aria-describedby="location-input">
                                 <span class="bg-white input-group-text pe-3 ps-3" id="location-input"><svg
@@ -113,7 +113,7 @@
                                                 <path d="M12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zm4.95-7.778a7 7 0 1 0-9.9 0L12 20.9l4.95-4.95zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
                                             </svg></span>
                             </div>
-                            <input th:field="*{offerSearch.price}" type="text" class="border-end-0 form-control p-3"
+                            <input type="text"  name="price" class="border-end-0 form-control p-3"
                                    placeholder="Prix"
                                    aria-label="Enter price" aria-describedby="keyword-input">
                             <div class="mb-3">
@@ -124,22 +124,25 @@
                             <div class="gy-2 row row-cols-2 row-cols-md-3 row-cols-xl-4 small text-secondary">
                                 <div>
                                     <div class="mb-3 form-check">
-                                        <input th:field="*{offerSearch.checkBox_wifi}" type="checkbox"
-                                               class="form-check-input" id="formInput35">
+                                        <input type="checkbox"
+                                               class="form-check-input" id="formInput35" name="houseOptions"
+                                               value="wifi">
                                         <label class="form-check-label" for="formInput35">Wi-Fi</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="mb-3 form-check">
-                                        <input th:field="*{offerSearch.checkBox_pets}" type="checkbox"
-                                               class="form-check-input" id="formInput36">
+                                        <input type="checkbox"
+                                               class="form-check-input" id="formInput36" name="houseOptions"
+                                               value="pets">
                                         <label class="form-check-label" for="formInput36">Animaux</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="mb-3 form-check">
-                                        <input th:field="*{offerSearch.checkBox_smoking}" type="checkbox"
-                                               class="form-check-input" id="formInput37">
+                                        <input type="checkbox"
+                                               class="form-check-input" id="formInput37" name="houseOptions"
+                                               value="smoking">
                                         <label class="form-check-label" for="formInput37">Fumeur</label>
                                     </div>
                                 </div>
@@ -153,7 +156,7 @@
                                 </label>
                                 <div>
                                 </div>
-                                <!--div>
+                                <!div>
                                     <div class="form-check">
                                         <input th:field="*{offer.checkBox_Male}" type="checkbox" class="form-check-input" id="exampleCheck4" value="Homme">
                                     </div>
