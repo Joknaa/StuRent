@@ -1,4 +1,4 @@
-package ma.ensate.sturent.Conf;
+package ma.Ensate.StuRent.Conf;
 
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

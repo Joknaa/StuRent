@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import ma.Ensate.StuRent.users.beans.Users;
 import ma.Ensate.StuRent.users.service.UsersService;
-import ma.ensate.sturent.Mapper;
+import ma.Ensate.StuRent.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

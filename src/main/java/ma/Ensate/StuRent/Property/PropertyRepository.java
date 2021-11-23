@@ -1,4 +1,4 @@
-package ma.ensate.sturent.Property;
+package ma.Ensate.StuRent.Property;
 
 import org.springframework.data.repository.CrudRepository;
 

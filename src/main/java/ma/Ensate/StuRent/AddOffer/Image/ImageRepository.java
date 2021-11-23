@@ -1,4 +1,4 @@
-package ma.ensate.sturent.AddOffer.Image;
+package ma.Ensate.StuRent.AddOffer.Image;
 
 import org.springframework.data.repository.CrudRepository;
 

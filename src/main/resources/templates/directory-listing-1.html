@@ -88,9 +88,10 @@
                     <div class="bg-light p-4 position-sticky top-0">
                         <h2 class="h5 text-dark">Filtrer la recherche</h2>
                         <hr/>
-                        <form>
+                        <form action="" name="offer" th:OfferDTO="${offerSearch}" method="post">
                             <div class="input-group mb-3">
-                                <input type="text" class="border-end-0 form-control p-3" placeholder="Vous cherchez?"
+                                <input th:field="*{offerSearch.title}" type="text" class="border-end-0 form-control p-3"
+                                       placeholder="Vous cherchez?"
                                        aria-label="Enter Keyword" aria-describedby="keyword-input">
                                 <span class="bg-white input-group-text pe-3 ps-3" id="keyword-input"><svg
                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -102,7 +103,8 @@
                                             </svg></span>
                             </div>
                             <div class="input-group mb-3">
-                                <input type="text" class="border-end-0 form-control p-3" placeholder="Localisation"
+                                <input th:field="*{offerSearch.city}" type="text" class="border-end-0 form-control p-3"
+                                       placeholder="Localisation"
                                        aria-label="Enter Location" aria-describedby="location-input">
                                 <span class="bg-white input-group-text pe-3 ps-3" id="location-input"><svg
                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -111,7 +113,8 @@
                                                 <path d="M12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zm4.95-7.778a7 7 0 1 0-9.9 0L12 20.9l4.95-4.95zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
                                             </svg></span>
                             </div>
-                            <input type="text" class="border-end-0 form-control p-3" placeholder="Prix"
+                            <input th:field="*{offerSearch.price}" type="text" class="border-end-0 form-control p-3"
+                                   placeholder="Prix"
                                    aria-label="Enter price" aria-describedby="keyword-input">
                             <div class="mb-3">
                             </div>
@@ -121,30 +124,27 @@
                             <div class="gy-2 row row-cols-2 row-cols-md-3 row-cols-xl-4 small text-secondary">
                                 <div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="formInput35">
+                                        <input th:field="*{offerSearch.checkBox_wifi}" type="checkbox"
+                                               class="form-check-input" id="formInput35">
                                         <label class="form-check-label" for="formInput35">Wi-Fi</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="formInput35">
-                                        <label class="form-check-label" for="formInput35">Animaux</label>
+                                        <input th:field="*{offerSearch.checkBox_pets}" type="checkbox"
+                                               class="form-check-input" id="formInput36">
+                                        <label class="form-check-label" for="formInput36">Animaux</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="formInput35">
-                                        <label class="form-check-label" for="formInput35">Fumeur</label>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="formInput35">
-                                        <label class="form-check-label" for="formInput35">Chauffe-eau</label>
+                                        <input th:field="*{offerSearch.checkBox_smoking}" type="checkbox"
+                                               class="form-check-input" id="formInput37">
+                                        <label class="form-check-label" for="formInput37">Fumeur</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="gy-2 mb-3 row row-cols-sm-2">
+                            <!--div-- class="gy-2 mb-3 row row-cols-sm-2">
                                 <label class="form-label mb-3 text-secondary">
                                     <div>
                                         <br>
@@ -153,25 +153,21 @@
                                 </label>
                                 <div>
                                 </div>
-                                <div>
+                                <!--div>
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck4" required="">
-                                        <label class="form-check-label" for="exampleCheck4">Homme</label>
+                                        <input th:field="*{offer.checkBox_Male}" type="checkbox" class="form-check-input" id="exampleCheck4" value="Homme">
                                     </div>
                                 </div>
                                 <div>
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck13" required/>
+                                        <input th:field="*{offer.checkBox_Female}" type="radio" class="form-check-input" id="exampleCheck13" value="Femme"/>
                                         <label class="form-check-label" for="exampleCheck13">Femme</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div-->
                             <div class="text-end">
-                                <a href="#">
-                                    <button type="submit" class="btn btn-primary pe-4 ps-4 rounded-pill text-white">
-                                        <span>Filter Resultat</span>
-                                    </button>
-                                </a>
+                                <input type="submit" value="Filter Resultat"
+                                       class="btn btn-primary pe-4 ps-4 rounded-pill text-white">
                             </div>
                         </form>
                     </div>
@@ -194,7 +190,9 @@
                         </div>
                     </div>
                     <div class="justify-content-center row row-cols-md-2">
-                        <div class="pb-3 pt-3">
+                        <form th:each="offer: ${offers}" action="/offer/details" method="post" class="pb-3 pt-3">
+                            <input type="text" name="post_id" th:value="*{offer.postID}" hidden>
+                            <input type="text" name="user_id" th:value="*{offer.userID}" hidden>
                             <div class="border">
                                 <a href="#" class="d-block"><img
                                         src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
@@ -202,8 +200,7 @@
                                 <div class="pb-3 ps-4 pe-4 pt-4">
                                     <div class="align-items-center d-flex justify-content-between">
                                         <div class="pb-1 pt-1">
-                                            <a href="#" class="link-dark text-decoration-none"><h2 class="h5 mb-1">
-                                                Title</h2></a>
+                                            <h2 th:text="*{offer.title}" class="h5 mb-1"></h2>
                                             <div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                      fill="currentColor" width="1.125em" height="1.125em"
@@ -213,193 +210,22 @@
                                                         <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                                                     </g>
                                                 </svg>
-                                                <span class="align-middle">Localisation</span>
+                                                <span th:text="${offer.address}" class="align-middle"></span>
                                             </div>
                                         </div>
                                     </div>
                                     <hr/>
                                     <div class="align-items-center d-flex justify-content-between">
-                                        <span class="fw-bold pb-1 pt-1">2000 dhs</span>
+                                        <span th:text="${offer.price}" class="fw-bold pb-1 pt-1"></span>
+
                                         <a href="directory-details-1.html">
-                                            <button type="button" class="btn btn-light rounded"
-                                                    style="background-color: #2759eb; color: #d9e1ea;">Voir plus
-                                            </button>
+                                            <input type="submit" value="Voir plus" class="btn btn-light rounded"
+                                                   style="background-color: #2759eb; color: #d9e1ea;"/>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="pb-3 pt-3">
-                            <div class="border">
-                                <a href="#" class="d-block"><img
-                                        src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                                        class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
-                                <div class="pb-3 ps-4 pe-4 pt-4">
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <div class="pb-1 pt-1">
-                                            <a href="#" class="link-dark text-decoration-none"><h2 class="h5 mb-1">
-                                                Title</h2></a>
-                                            <div>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                     fill="currentColor" width="1.125em" height="1.125em"
-                                                     class="me-1 text-primary">
-                                                    <g>
-                                                        <path fill="none" d="M0 0h24v24H0z"/>
-                                                        <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="align-middle">Localisation</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr/>
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <span class="fw-bold pb-1 pt-1">2000 dhs</span>
-                                        <a href="directory-details-1.html">
-                                            <button type="button" class="btn btn-light rounded"
-                                                    style="background-color: #2759eb; color: #d9e1ea;">Voir plus
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pb-3 pt-3">
-                            <div class="border">
-                                <a href="#" class="d-block"><img
-                                        src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                                        class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
-                                <div class="pb-3 ps-4 pe-4 pt-4">
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <div class="pb-1 pt-1">
-                                            <a href="#" class="link-dark text-decoration-none"><h2 class="h5 mb-1">
-                                                Title</h2></a>
-                                            <div>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                     fill="currentColor" width="1.125em" height="1.125em"
-                                                     class="me-1 text-primary">
-                                                    <g>
-                                                        <path fill="none" d="M0 0h24v24H0z"/>
-                                                        <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="align-middle">Localisation</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr/>
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <span class="fw-bold pb-1 pt-1">2000 dhs</span>
-                                        <a href="directory-details-1.html">
-                                            <button type="button" class="btn btn-light rounded"
-                                                    style="background-color: #2759eb; color: #d9e1ea;">Voir plus
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pb-3 pt-3">
-                            <div class="border">
-                                <a href="#" class="d-block"><img
-                                        src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                                        class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
-                                <div class="pb-3 ps-4 pe-4 pt-4">
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <div class="pb-1 pt-1">
-                                            <a href="#" class="link-dark text-decoration-none"><h2 class="h5 mb-1">
-                                                Title</h2></a>
-                                            <div>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                     fill="currentColor" width="1.125em" height="1.125em"
-                                                     class="me-1 text-primary">
-                                                    <g>
-                                                        <path fill="none" d="M0 0h24v24H0z"/>
-                                                        <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="align-middle">Localisation</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr/>
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <span class="fw-bold pb-1 pt-1">2000 dhs</span>
-                                        <a href="directory-details-1.html">
-                                            <button type="button" class="btn btn-light rounded"
-                                                    style="background-color: #2759eb; color: #d9e1ea;">Voir plus
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pb-3 pt-3">
-                            <div class="border">
-                                <a href="#" class="d-block"><img
-                                        src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                                        class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
-                                <div class="pb-3 ps-4 pe-4 pt-4">
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <div class="pb-1 pt-1">
-                                            <a href="#" class="link-dark text-decoration-none"><h2 class="h5 mb-1">
-                                                Title</h2></a>
-                                            <div>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                     fill="currentColor" width="1.125em" height="1.125em"
-                                                     class="me-1 text-primary">
-                                                    <g>
-                                                        <path fill="none" d="M0 0h24v24H0z"/>
-                                                        <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="align-middle">Localisation</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr/>
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <span class="fw-bold pb-1 pt-1">2000 dhs</span>
-                                        <button type="button" class="btn btn-light rounded"
-                                                style="background-color: #2759eb; color: #d9e1ea;">Voir plus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pb-3 pt-3">
-                            <div class="border">
-                                <a href="#" class="d-block"><img
-                                        src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                                        class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
-                                <div class="pb-3 ps-4 pe-4 pt-4">
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <div class="pb-1 pt-1">
-                                            <a href="#" class="link-dark text-decoration-none"><h2 class="h5 mb-1">
-                                                Title</h2></a>
-                                            <div>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                     fill="currentColor" width="1.125em" height="1.125em"
-                                                     class="me-1 text-primary">
-                                                    <g>
-                                                        <path fill="none" d="M0 0h24v24H0z"/>
-                                                        <path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="align-middle">Localisation</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr/>
-                                    <div class="align-items-center d-flex justify-content-between">
-                                        <span class="fw-bold pb-1 pt-1">2000 dhs</span>
-                                        <button type="button" class="btn btn-light rounded"
-                                                style="background-color: #2759eb; color: #d9e1ea;">Voir plus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                     <div class="pb-3 pt-3 text-center">
                         <a class="align-items-center btn btn-primary d-inline-flex pe-3 ps-3 rounded-pill text-white"

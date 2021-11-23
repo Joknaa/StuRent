@@ -1,4 +1,4 @@
-package ma.ensate.sturent.AddOffer;
+package ma.Ensate.StuRent.AddOffer;
 
 import org.springframework.data.repository.CrudRepository;
 

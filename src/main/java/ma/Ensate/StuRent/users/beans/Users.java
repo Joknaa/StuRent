@@ -1,4 +1,4 @@
-package ma.ensate.sturent.users.beans;
+package ma.Ensate.StuRent.users.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

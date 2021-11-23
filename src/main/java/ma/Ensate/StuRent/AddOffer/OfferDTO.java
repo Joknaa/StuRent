@@ -1,4 +1,4 @@
-package ma.ensate.sturent.AddOffer;
+package ma.Ensate.StuRent.AddOffer;
 
 import com.sun.istack.NotNull;
 
@@ -8,19 +8,51 @@ public class OfferDTO {
     @NotNull
     private Long User_ID;
     @NotNull
-    private String Title;
+    private String Title = "";
     @NotNull
-    private String City;
-    private String Address;
+    private String City = "";
+    private String Address = "";
     @NotNull
-    private String Gender;
-    private String Description;
+    private String Gender = "";
+    private String Description = "";
     @NotNull
-    private int Price;
-    private String Has_Wifi;
-    private String Allow_Pets;
-    private String Allow_Smoking;
-    private String Images;
+    private int Price = 0;
+    private String Has_Wifi = "";
+    private String Allow_Pets = "";
+    private String Allow_Smoking = "";
+    private String Images = "";
+
+    private boolean CheckBox_Male = false;
+    private boolean CheckBox_Female = false;
+    private boolean CheckBox_wifi= false;
+    private boolean CheckBox_pets= false;
+    private boolean CheckBox_smoking= false;
+
+
+
+    public boolean isCheckBox_wifi() {
+        return CheckBox_wifi;
+    }
+
+    public void setCheckBox_wifi(boolean checkBox_wifi) {
+        CheckBox_wifi = checkBox_wifi;
+    }
+
+    public boolean isCheckBox_pets() {
+        return CheckBox_pets;
+    }
+
+    public void setCheckBox_pets(boolean checkBox_pets) {
+        CheckBox_pets = checkBox_pets;
+    }
+
+    public boolean isCheckBox_smoking() {
+        return CheckBox_smoking;
+    }
+
+    public void setCheckBox_smoking(boolean checkBox_smoking) {
+        CheckBox_smoking = checkBox_smoking;
+    }
 
 
     public String getImages() {return Images;}
@@ -115,5 +147,21 @@ public class OfferDTO {
 
     public void setTitle(String title) {
         Title = title;
+    }
+
+    public boolean isCheckBox_Male() {
+        return CheckBox_Male;
+    }
+
+    public void setCheckBox_Male(boolean checkBox_Male) {
+        CheckBox_Male = checkBox_Male;
+    }
+
+    public boolean isCheckBox_Female() {
+        return CheckBox_Female;
+    }
+
+    public void setCheckBox_Female(boolean checkBox_Female) {
+        CheckBox_Female = checkBox_Female;
     }
 }

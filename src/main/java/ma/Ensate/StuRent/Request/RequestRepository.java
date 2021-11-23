@@ -1,4 +1,4 @@
-package ma.ensate.sturent.Request;
+package ma.Ensate.StuRent.Request;
 
 import org.springframework.data.repository.CrudRepository;
 

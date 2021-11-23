@@ -1,4 +1,4 @@
-package ma.ensate.sturent.AddOffer;
+package ma.Ensate.StuRent.AddOffer;
 
 import javax.persistence.*;
 
@@ -33,6 +33,17 @@ public class Offer {
         setAllow_Pets(allow_pets);
         setAllow_Smoking(allow_smoking);
     }
+    public Offer(String title, String city, int price, String gender, String has_wifi, String allow_pets, String allow_smoking) {
+        setPostID(0L);
+        setTitle(title);
+        setCity(city);
+        setPrice(price);
+        setGender(gender);
+        setHas_Wifi(has_wifi);
+        setAllow_Pets(allow_pets);
+        setAllow_Smoking(allow_smoking);
+    }
+
 
     public Long getPostID(){return this.Post_ID;}
     public Long getUserID(){return this.User_ID;}

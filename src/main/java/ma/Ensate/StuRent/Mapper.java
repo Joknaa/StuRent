@@ -1,9 +1,9 @@
-package ma.ensate.sturent;
+package ma.Ensate.StuRent;
 
-import ma.ensate.sturent.AddOffer.Image.Image;
-import ma.ensate.sturent.AddOffer.Offer;
-import ma.ensate.sturent.AddOffer.OfferDTO;
-import ma.ensate.sturent.users.beans.Users;
+import ma.Ensate.StuRent.AddOffer.Image.Image;
+import ma.Ensate.StuRent.AddOffer.Offer;
+import ma.Ensate.StuRent.AddOffer.OfferDTO;
+import ma.Ensate.StuRent.users.beans.Users;
 
 public class Mapper {
     static public Offer Map2Offer(OfferDTO offerDTO) {
@@ -40,5 +40,17 @@ public class Mapper {
         return new Image(
                 offerDTO.getPost_ID(),
                 "test");
+    }
+
+    public static Offer MapSearch(OfferDTO offerDTO){
+        return new Offer(
+                offerDTO.getTitle(),
+                offerDTO.getCity(),
+                offerDTO.getPrice(),
+                offerDTO.isCheckBox_Female() ? "Woman" : "Man",
+                offerDTO.isCheckBox_wifi() ? "yes" : "no",
+                offerDTO.isCheckBox_pets() ? "yes" : "no",
+                offerDTO.isCheckBox_smoking() ? "yes" : "no"
+        );
     }
 }

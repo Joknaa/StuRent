@@ -1,4 +1,4 @@
-package ma.ensate.sturent;
+package ma.Ensate.StuRent;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
