@@ -3,6 +3,8 @@ package ma.Ensate.StuRent.AddOffer;
 import ma.Ensate.StuRent.AddOffer.Image.ImageController;
 import ma.Ensate.StuRent.AddOffer.Image.ImageRepository;
 import ma.Ensate.StuRent.Mapper;
+import ma.Ensate.StuRent.users.beans.Users;
+import ma.Ensate.StuRent.users.ws.UsersWS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -128,6 +130,8 @@ public class OfferController {
 
     @PostMapping("/offer/details")
     public ModelAndView LoadOfferInfo(WebRequest request) {
+
+
         //String post_ID = request.getParameter("post_id");
         Long post_ID = Long.parseLong(Objects.requireNonNull(request.getParameter("post_id")));
         String user_ID = Objects.requireNonNull(request.getParameter("user_id"));
@@ -152,8 +156,15 @@ public class OfferController {
 
     @GetMapping("/offer/add")
     public String getOfferAdditionForm(WebRequest request, Model model) {
-        model.addAttribute("offer", new OfferDTO());
-        return "AddOffer";
+        System.out.println("test: "+ UsersWS.session);
+        if(UsersWS.session.equals("")){
+            model.addAttribute("user", new Users());
+            return "login";
+        }else{
+            model.addAttribute("offer", new OfferDTO());
+            return "AddOffer";
+        }
+
     }
 
     @PostMapping("/offer/confirm")

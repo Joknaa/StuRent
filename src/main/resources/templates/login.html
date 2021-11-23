@@ -48,6 +48,8 @@
                             <input required="required" type="number" placeholder="Phone" name="phone" th:field="*{user.phone}"/>
                         </div>
                         <input type="submit" class="btn" value="Sign up" style="background-color: #ca258c;"/>
+                        <p ><span <span th:if="${msg != ''}">Athentification Failed</span>></p>
+
                     </form>
                 </div>
             </div>
@@ -58,7 +60,7 @@
                         <p style="margin-right: 28px;">Hello, Friend! Enter your personal details and start your journey with you.</p>
                         <button class="btn transparent" id="sign-up-btn" style="margin-right: 28px;">
                             Sign up
-</button>
+                        </button>
                     </div>
                     <img th:src="@{/NIAA/img/log.svg}" class="image" alt="" style="margin-bottom: -;"/>
                 </div>
