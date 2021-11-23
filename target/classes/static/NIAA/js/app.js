@@ -14,7 +14,7 @@ var pass = document.getElementById("password")
     , confirmPass = document.getElementById("confirmpassword");
 
 function validatePassword(){
-    if(pass.value != confirmPass.value  ) {
+    if( confirmPass.value.toString().localeCompare(pass.value.toString()) != 0 ) {
         confirmPass.setCustomValidity("Passwords Don't Match");
     } else {
         confirmPass.setCustomValidity('');
