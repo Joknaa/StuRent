@@ -1,13 +1,11 @@
-package ma.Ensate.StuRent.users.service;
+package ma.ensate.sturent.users.service;
 
 import java.util.List;
 import java.util.Optional;
-
+import ma.ensate.sturent.users.beans.Users;
+import ma.ensate.sturent.users.dao.UsersDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import ma.Ensate.StuRent.users.beans.Users;
-import ma.Ensate.StuRent.users.dao.UsersDAO;
 
 @Service
 public class UsersService {

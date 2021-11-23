@@ -9,6 +9,7 @@ public class Offer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Post_ID;
     private Long User_ID;
+    private String Title;
     private String City;
     private String Address;
     private String Description;
@@ -19,9 +20,10 @@ public class Offer {
     private String Allow_Smoking;
 
     public Offer() { }
-    public Offer(Long user_ID, String city, String address, String description, int price, String gender, String has_wifi, String allow_pets, String allow_smoking) {
+    public Offer(Long user_ID, String title, String city, String address, String description, int price, String gender, String has_wifi, String allow_pets, String allow_smoking) {
         setPostID(0L);
         setUserID(user_ID);
+        setTitle(title);
         setCity(city);
         setAddress(address);
         setDescription(description);
@@ -32,10 +34,10 @@ public class Offer {
         setAllow_Smoking(allow_smoking);
     }
 
-
     public Long getPostID(){return this.Post_ID;}
-    public Long getUserD(){return this.User_ID;}
+    public Long getUserID(){return this.User_ID;}
     public String getAddress(){return this.Address;}
+    public String getCity(){return this.City;}
     public String getDescription(){return this.Description;}
     public String getGender(){return this.Gender;}
     public int getPrice(){return this.Price;}
@@ -48,29 +50,31 @@ public class Offer {
     public void setGender(String gender){this.Gender = gender;}
     public void setPrice(int price){this.Price = price;}
 
-
-    public String isHas_Wifi() {
+    public String getHas_Wifi() {
         return Has_Wifi;
     }
-
     public void setHas_Wifi(String has_Wifi) {
         Has_Wifi = has_Wifi;
     }
-
-    public String isAllow_Pets() {
+    public String getAllow_Pets() {
         return Allow_Pets;
     }
-
     public void setAllow_Pets(String allow_Pets) {
         Allow_Pets = allow_Pets;
     }
-
-    public String isAllow_Smoking() {
+    public String getAllow_Smoking() {
         return Allow_Smoking;
     }
-
     public void setAllow_Smoking(String allow_Smoking) {
         Allow_Smoking = allow_Smoking;
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
     }
 
     public String ShowDetails() {

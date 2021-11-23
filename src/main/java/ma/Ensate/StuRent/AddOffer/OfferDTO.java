@@ -8,6 +8,8 @@ public class OfferDTO {
     @NotNull
     private Long User_ID;
     @NotNull
+    private String Title;
+    @NotNull
     private String City;
     private String Address;
     @NotNull
@@ -105,5 +107,13 @@ public class OfferDTO {
 
     public void setPrice(int price) {
         Price = price;
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
     }
 }

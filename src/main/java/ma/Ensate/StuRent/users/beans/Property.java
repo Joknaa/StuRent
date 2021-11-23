@@ -1,4 +1,4 @@
-package ma.Ensate.StuRent.users.beans;
+package ma.ensate.sturent.users.beans;
 
 public class Property {
 

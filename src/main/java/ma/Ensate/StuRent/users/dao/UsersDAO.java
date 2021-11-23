@@ -1,9 +1,9 @@
-package ma.Ensate.StuRent.users.dao;
+package ma.ensate.sturent.users.dao;
 
+import ma.ensate.sturent.users.beans.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import ma.Ensate.StuRent.users.beans.Users;
 @Repository
 public interface UsersDAO extends JpaRepository<Users, String>{
 

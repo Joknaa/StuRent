@@ -1,14 +1,15 @@
 package ma.ensate.sturent;
 
-import ma.Ensate.StuRent.users.beans.Users;
 import ma.ensate.sturent.AddOffer.Image.Image;
 import ma.ensate.sturent.AddOffer.Offer;
 import ma.ensate.sturent.AddOffer.OfferDTO;
+import ma.ensate.sturent.users.beans.Users;
 
 public class Mapper {
     static public Offer Map2Offer(OfferDTO offerDTO) {
         return new Offer(
                 0L,
+                offerDTO.getTitle(),
                 offerDTO.getCity(),
                 offerDTO.getAddress(),
                 offerDTO.getDescription(),

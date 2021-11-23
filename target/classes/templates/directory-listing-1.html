@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,6 +72,8 @@
         </div>
     </nav>
 </header>
+<hr>
+<hr>
 <main>
     <section class="background-cover bg-dark  pb-5 position-relative pt-5 text-white"
              style="background-image: url('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDkxfHxjaGljYWdvJTIwaG90ZWx8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=1200&h=400&fit=crop');">
@@ -498,7 +500,7 @@
         </div>
     </div>
 </footer>
-<script src="assets/js/popper.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script th:src="@{/YOURY/bootstrap/js/popper.min.js}"></script>
+<script th:src="@{/YOURY/bootstrap/js/bootstrap.min.js}"></script>
 </body>
 </html>

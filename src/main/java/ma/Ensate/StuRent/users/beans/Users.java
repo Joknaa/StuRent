@@ -1,4 +1,4 @@
-package ma.Ensate.StuRent.users.beans;
+package ma.ensate.sturent.users.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Users")
 public class Users {
-
 
 	private String username;
 	@Id

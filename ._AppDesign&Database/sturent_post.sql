@@ -16,8 +16,8 @@ create table post
 );
 
 create index post_users_User_ID_fk
-    on post (User_ID);
+    on post (User_Name);
 
-INSERT INTO sturent.post (Post_ID, User_ID, City, Address, Gender, Price, Description, Has_Wifi, Has_Water_Heater, Allow_Pets, Allow_Smoking, Is_Available) VALUES (1, 1, null, '', 'Man', 0, 'test', '0', '0', '0', '0', 1);
-INSERT INTO sturent.post (Post_ID, User_ID, City, Address, Gender, Price, Description, Has_Wifi, Has_Water_Heater, Allow_Pets, Allow_Smoking, Is_Available) VALUES (2, 1, null, '', 'Man', 0, null, '0', '0', '0', '0', 1);
-INSERT INTO sturent.post (Post_ID, User_ID, City, Address, Gender, Price, Description, Has_Wifi, Has_Water_Heater, Allow_Pets, Allow_Smoking, Is_Available) VALUES (3, 1, null, '', 'Man', 0, null, '0', '0', '0', '0', 1);
+INSERT INTO sturent.post (Post_ID, User_Name, City, Address, Gender, Price, Description, Has_Wifi, Has_Water_Heater, Allow_Pets, Allow_Smoking, Is_Available) VALUES (1, 1, null, '', 'Man', 0, 'test', '0', '0', '0', '0', 1);
+INSERT INTO sturent.post (Post_ID, User_Name, City, Address, Gender, Price, Description, Has_Wifi, Has_Water_Heater, Allow_Pets, Allow_Smoking, Is_Available) VALUES (2, 1, null, '', 'Man', 0, null, '0', '0', '0', '0', 1);
+INSERT INTO sturent.post (Post_ID, User_Name, City, Address, Gender, Price, Description, Has_Wifi, Has_Water_Heater, Allow_Pets, Allow_Smoking, Is_Available) VALUES (3, 1, null, '', 'Man', 0, null, '0', '0', '0', '0', 1);
