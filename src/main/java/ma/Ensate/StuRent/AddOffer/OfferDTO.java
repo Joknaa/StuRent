@@ -6,7 +6,7 @@ public class OfferDTO {
     @NotNull
     private Long Post_ID = 1L;
     @NotNull
-    private Long User_ID;
+    private String User_Name;
     @NotNull
     private String Title = "";
     @NotNull
@@ -20,13 +20,16 @@ public class OfferDTO {
     private String Has_Wifi = "";
     private String Allow_Pets = "";
     private String Allow_Smoking = "";
-    private String Images = "";
+    private String Images;
 
     private boolean CheckBox_Male = false;
     private boolean CheckBox_Female = false;
     private boolean CheckBox_wifi= false;
     private boolean CheckBox_pets= false;
     private boolean CheckBox_smoking= false;
+
+    @NotNull
+    private String Phone;
 
 
 
@@ -93,12 +96,12 @@ public class OfferDTO {
         Post_ID = post_ID;
     }
 
-    public Long getUser_ID() {
-        return User_ID;
+    public String getUser_Name() {
+        return User_Name;
     }
 
-    public void setUser_ID(Long user_ID) {
-        User_ID = user_ID;
+    public void setUser_Name(String user_Name) {
+        User_Name = user_Name;
     }
 
     public String getCity() {
@@ -163,5 +166,13 @@ public class OfferDTO {
 
     public void setCheckBox_Female(boolean checkBox_Female) {
         CheckBox_Female = checkBox_Female;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
     }
 }

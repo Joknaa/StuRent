@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Pinegrow Web Editor - Directory Bootstrap v5 Template">
     <meta name="author" content="">
-    <title>Pinegrow | Bootstrap Blocks Template</title>
+    <title>Search</title>
     <!-- Bootstrap core CSS -->
     <link th:href="@{/YOURY/bootstrap_theme/bootstrap.css}" rel="stylesheet" type="text/css">
     <link th:href="@{/YOURY/blocks.css}" rel="stylesheet">
@@ -17,10 +17,10 @@
 <header style="background-color: rgba(255, 255, 255, 0.6);" class="fixed-top">
     <nav class="border-bottom navbar navbar-expand-lg navbar-light pb-lg-0 pt-lg-0">
         <div class="container">
-            <a class="fw-bold navbar-brand text-secondary" href="landing_page.html">StuRent</a>
+            <a class="fw-bold navbar-brand text-secondary" href="/">StuRent</a>
             <ul class="align-items-lg-center flex-row ms-auto me-2 me-lg-0 navbar-nav order-lg-2">
                 <li class="d-none d-sm-block nav-item">
-                    <a class="btn btn-primary btn-sm pe-4 ps-4 rounded-pill text-white" href="../Add/addoffer.html">
+                    <a class="btn btn-primary btn-sm pe-4 ps-4 rounded-pill text-white" href="/offer/add">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em"
                              height="1.25em" class="me-2">
                             <g>
@@ -31,7 +31,7 @@
                         <span class="align-middle">Ajouter Offre</span></a>
                 </li>
                 <li class="ms-2 nav-item">
-                    <a class="btn btn-primary btn-sm p-2 rounded-pill text-white" href="directory-listing-1.html"
+                    <a class="btn btn-primary btn-sm p-2 rounded-pill text-white" href="/search"
                        aria-label="Search button">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em"
                              height="1.25em" class="d-block">
@@ -50,22 +50,24 @@
             <div class="collapse navbar-collapse " id="navbarNavDropdown-3">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link px-lg-3 py-lg-4" href="landing_page.html">Accueil</a>
+                        <a class="nav-link px-lg-3 py-lg-4" href="/">Accueil</a>
                     </li>
                     <li class="nav-item dropdown">
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-lg-3 py-lg-4" href="#">FAQ</a>
+                        <a class="nav-link px-lg-3 py-lg-4" href="">FAQ</a>
                     </li>
                     <li class="nav-item">
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-lg-3 py-lg-4" href="#">Contact</a>
+                        <a class="nav-link px-lg-3 py-lg-4" href="">Contact</a>
                     </li>
                 </ul>
                 <ul class="align-items-lg-center ms-auto navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link px-lg-3 py-lg-4" href="../login/login_Signup.html">Se connecter/s&apos;inscriver&nbsp;</a>
+                        <a th:if="${isLoggedOut}" class="nav-link px-lg-3 py-lg-4 text-secondary" href="/login">Login /
+                            Signup</a>
+                        <a th:unless="${isLoggedOut}" class="nav-link px-lg-3 py-lg-4 text-secondary" href="/destroy">Logout&nbsp;</a>
                     </li>
                 </ul>
             </div>
@@ -113,14 +115,14 @@
                                                 <path d="M12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zm4.95-7.778a7 7 0 1 0-9.9 0L12 20.9l4.95-4.95zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
                                             </svg></span>
                             </div>
-                            <input type="text"  name="price" class="border-end-0 form-control p-3"
+                            <input type="text" name="price" class="border-end-0 form-control p-3"
                                    placeholder="Prix"
                                    aria-label="Enter price" aria-describedby="keyword-input">
                             <div class="mb-3">
                             </div>
                             <div class="mb-3">
                             </div>
-                            <label class="form-label mb-3 text-secondary">Filtrer par tags</label>
+                            <!--label class="form-label mb-3 text-secondary">Filtrer par tags</label>
                             <div class="gy-2 row row-cols-2 row-cols-md-3 row-cols-xl-4 small text-secondary">
                                 <div>
                                     <div class="mb-3 form-check">
@@ -146,7 +148,7 @@
                                         <label class="form-check-label" for="formInput37">Fumeur</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div-->
                             <!--div-- class="gy-2 mb-3 row row-cols-sm-2">
                                 <label class="form-label mb-3 text-secondary">
                                     <div>
@@ -197,9 +199,7 @@
                             <input type="text" name="post_id" th:value="*{offer.postID}" hidden>
                             <input type="text" name="user_id" th:value="*{offer.userID}" hidden>
                             <div class="border">
-                                <a href="#" class="d-block"><img
-                                        src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                                        class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                                <a href="" class="d-block"><img th:src="*{offer.images}" class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
                                 <div class="pb-3 ps-4 pe-4 pt-4">
                                     <div class="align-items-center d-flex justify-content-between">
                                         <div class="pb-1 pt-1">
@@ -221,7 +221,7 @@
                                     <div class="align-items-center d-flex justify-content-between">
                                         <span th:text="${offer.price}" class="fw-bold pb-1 pt-1"></span>
 
-                                        <a href="directory-details-1.html">
+                                        <a href="/">
                                             <input type="submit" value="Voir plus" class="btn btn-light rounded"
                                                    style="background-color: #2759eb; color: #d9e1ea;"/>
                                         </a>
@@ -232,7 +232,7 @@
                     </div>
                     <div class="pb-3 pt-3 text-center">
                         <a class="align-items-center btn btn-primary d-inline-flex pe-3 ps-3 rounded-pill text-white"
-                           href="#">
+                           href="">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                  width="1.25em" height="1.25em" class="me-2">
                                 <path fill="none" d="M0 0h24v24H0z"/>
@@ -256,7 +256,7 @@
                         rejoindre en toute sécurité !</p>
                 </div>
                 <div class="col-lg-auto ms-auto">
-                    <a class="btn btn-outline-light ps-4 pe-4 rounded-pill" href="../login/login_Signup.html">Inscrivez-vous</a>
+                    <a class="btn btn-outline-light ps-4 pe-4 rounded-pill" href="/login">Inscrivez-vous</a>
                 </div>
             </div>
         </div>

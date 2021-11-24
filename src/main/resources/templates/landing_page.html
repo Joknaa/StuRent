@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Pinegrow Web Editor - Directory Bootstrap v5 Template">
     <meta name="author" content="">
-    <title>Sturent</title>
+    <title>StuRent - Helps Student find Rent</title>
     <!-- Bootstrap core CSS -->
     <link th:href="@{/YOURY/bootstrap_theme/bootstrap.css}" rel="stylesheet" type="text/css">
     <link th:href="@{/YOURY/blocks.css}" rel="stylesheet">
@@ -31,7 +31,7 @@
                         <span class="align-middle">Ajouter Offre</span></a>
                 </li>
                 <li class="ms-2 nav-item">
-                    <a class="btn btn-primary btn-sm p-2 rounded-pill text-white" href="directory-listing-1.html"
+                    <a class="btn btn-primary btn-sm p-2 rounded-pill text-white" href="/search"
                        aria-label="Search button">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em"
                              height="1.25em" class="d-block">
@@ -65,8 +65,9 @@
                 </ul>
                 <ul class="align-items-lg-center ms-auto navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link px-lg-3 py-lg-4 text-secondary" href="/login">Se
-                            connecter/s&apos;inscriver&nbsp;</a>
+                        <a th:if="${isLoggedOut}" class="nav-link px-lg-3 py-lg-4 text-secondary" href="/login">Login /
+                            Signup</a>
+                        <a th:unless="${isLoggedOut}" class="nav-link px-lg-3 py-lg-4 text-secondary" href="/destroy">Logout&nbsp;</a>
                     </li>
                 </ul>
             </div>
@@ -81,14 +82,14 @@
                 <div class="col-lg-7 col-xl-6 col-xxl-5 pb-5 pt-5">
                     <h1 class="display-3 fw-normal ">Trouvez la colocation parfaite pour vous !</h1>
                     <p class="lead mb-5">Ici, tu peux trouver des amis incroyables et non seulement un colocataire!</p>
-                    <form>
+                    <form action="/search">
                         <div class="gx-2 row">
                             <div class="col-sm mb-3">
                                 <input type="text" class="form-control form-control-lg ps-4 pe-4 rounded-pill"
                                        placeholder="Qu'est ce que vous cherchez ?" style="color: #b3b3b3;">
                             </div>
                             <div class="col-sm-auto mb-3 text-end">
-                                <a href="directory-listing-1.html">
+                                <a href="/search">
                                     <button type="submit"
                                             class="btn btn-lg btn-primary pe-4 ps-4 rounded-pill text-light">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -119,13 +120,14 @@
             </div>
             <div class="justify-content-center row">
 
-                <form th:each="offer: ${offers}" action="/offer/details" method="post"  class="col-lg-4 col-md-6 pb-3 pt-3">
+                <form th:each="offer: ${offers}" action="/offer/details" method="post"
+                      class="col-lg-4 col-md-6 pb-3 pt-3">
                     <input type="text" name="post_id" th:value="*{offer.postID}" hidden>
                     <input type="text" name="user_id" th:value="*{offer.userID}" hidden>
                     <div class="border">
-                        <a href="#" class="d-block"><img
-                                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDY5fHxhbyUyMG5hbmd8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                                class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
+                        <a class="d-block"><img
+                            th:src="*{offer.images}"
+                            class="img-fluid w-100" alt="Location image" width="350" height="240"></a>
                         <div class="pb-3 ps-4 pe-4 pt-4">
                             <div class="align-items-center d-flex justify-content-between">
                                 <div class="pb-1 pt-1">
@@ -148,9 +150,9 @@
                                     <span th:text="${offer.price}" class="align-middle"></span>
                                 </div>
                                 <span class="fw-bold pb-1 pt-1"><span></span><span></span><span></span></span>
-                                <a href="/">
+                                <a href="">
                                     <input type="submit" value="Voir plus" class="btn btn-light rounded"
-                                            style="background-color: #2759eb; color: #d9e1ea;"/>
+                                           style="background-color: #2759eb; color: #d9e1ea;"/>
                                 </a>
                             </div>
                         </div>
@@ -158,8 +160,7 @@
                 </form>
             </div>
             <div class="pb-3 pt-3 text-center">
-                <a class="btn btn-primary pe-4 ps-4 rounded-pill text-white" href="directory-listing-1.html">View
-                    More</a>
+                <a class="btn btn-primary pe-4 ps-4 rounded-pill text-white" href="/search">View More</a>
             </div>
         </div>
     </section>

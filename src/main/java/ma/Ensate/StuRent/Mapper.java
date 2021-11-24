@@ -4,11 +4,12 @@ import ma.Ensate.StuRent.AddOffer.Image.Image;
 import ma.Ensate.StuRent.AddOffer.Offer;
 import ma.Ensate.StuRent.AddOffer.OfferDTO;
 import ma.Ensate.StuRent.users.beans.Users;
+import ma.Ensate.StuRent.users.ws.UsersWS;
 
 public class Mapper {
     static public Offer Map2Offer(OfferDTO offerDTO) {
         return new Offer(
-                0L,
+                UsersWS.session,
                 offerDTO.getTitle(),
                 offerDTO.getCity(),
                 offerDTO.getAddress(),
@@ -17,7 +18,8 @@ public class Mapper {
                 offerDTO.getGender(),
                 offerDTO.getHas_Wifi(),
                 offerDTO.getAllow_Pets(),
-                offerDTO.getAllow_Smoking()
+                offerDTO.getAllow_Smoking(),
+                offerDTO.getPhone()
         );
     }
 
@@ -47,7 +49,6 @@ public class Mapper {
                 offerDTO.getTitle(),
                 offerDTO.getCity(),
                 offerDTO.getPrice(),
-                offerDTO.isCheckBox_Female() ? "Woman" : "Man",
                 offerDTO.isCheckBox_wifi() ? "yes" : "no",
                 offerDTO.isCheckBox_pets() ? "yes" : "no",
                 offerDTO.isCheckBox_smoking() ? "yes" : "no"

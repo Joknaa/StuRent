@@ -8,7 +8,7 @@ public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Post_ID;
-    private Long User_ID;
+    private String User_Name;
     private String Title;
     private String City;
     private String Address;
@@ -18,11 +18,13 @@ public class Offer {
     private String Has_Wifi;
     private String Allow_Pets;
     private String Allow_Smoking;
+    private String Phone;
+    private String Images;
 
     public Offer() { }
-    public Offer(Long user_ID, String title, String city, String address, String description, int price, String gender, String has_wifi, String allow_pets, String allow_smoking) {
+    public Offer(String user_Name, String title, String city, String address, String description, int price, String gender, String has_wifi, String allow_pets, String allow_smoking, String phone) {
         setPostID(0L);
-        setUserID(user_ID);
+        setUserID(user_Name);
         setTitle(title);
         setCity(city);
         setAddress(address);
@@ -32,8 +34,9 @@ public class Offer {
         setHas_Wifi(has_wifi);
         setAllow_Pets(allow_pets);
         setAllow_Smoking(allow_smoking);
+        setPhone(phone);
     }
-    public Offer(String title, String city, int price, String gender, String has_wifi, String allow_pets, String allow_smoking) {
+    public Offer(String title, String city, int price, String gender, String has_wifi, String allow_pets, String allow_smoking, String phone) {
         setPostID(0L);
         setTitle(title);
         setCity(city);
@@ -42,6 +45,7 @@ public class Offer {
         setHas_Wifi(has_wifi);
         setAllow_Pets(allow_pets);
         setAllow_Smoking(allow_smoking);
+        setPhone(phone);
     }
     public Offer(String title, String city, int price, String has_wifi, String allow_pets, String allow_smoking) {
         setTitle(title);
@@ -54,7 +58,7 @@ public class Offer {
 
 
     public Long getPostID(){return this.Post_ID;}
-    public Long getUserID(){return this.User_ID;}
+    public String getUserID(){return this.User_Name;}
     public String getAddress(){return this.Address;}
     public String getCity(){return this.City;}
     public String getDescription(){return this.Description;}
@@ -62,7 +66,7 @@ public class Offer {
     public int getPrice(){return this.Price;}
 
     public void setPostID(Long ID){this.Post_ID = ID;}
-    public void setUserID(Long ID){this.User_ID = ID;}
+    public void setUserID(String ID){this.User_Name = ID;}
     public void setCity(String city){this.City = city;}
     public void setAddress(String address){this.Address = address;}
     public void setDescription(String max){this.Description = max;}
@@ -98,5 +102,21 @@ public class Offer {
 
     public String ShowDetails() {
         return String.format("%s | %s | %s | %d | %s | %s | %s | %s", City, Address, Description, Price, Gender, Has_Wifi, Allow_Pets, Allow_Smoking);
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
+    }
+
+    public String getImages() {
+        return Images;
+    }
+
+    public void setImages(String images) {
+        Images = images;
     }
 }

@@ -23,5 +23,5 @@ function validatePassword(){
     }
 }
 
-pass.onchange = validatePassword;
-confirmPass.onkeyup = validatePassword;
+//pass.onchange = validatePassword;
+//confirmPass.onkeyup = validatePassword;

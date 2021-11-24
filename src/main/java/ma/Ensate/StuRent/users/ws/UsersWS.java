@@ -2,6 +2,8 @@ package ma.Ensate.StuRent.users.ws;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import ma.Ensate.StuRent.AddOffer.OfferController;
 import ma.Ensate.StuRent.users.beans.Users;
 import ma.Ensate.StuRent.users.service.UsersService;
 import ma.Ensate.StuRent.Mapper;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
 
@@ -22,6 +25,7 @@ public class UsersWS {
 	public static String session="";
 	public static String msg="";
 	public static String etatconnexion="";
+	public HttpServletRequest sessionRequest;
 	
 	public Users findByUsername(String username) {
 		return usersService.findByUsername(username);
@@ -42,10 +46,12 @@ public class UsersWS {
 	public String login(WebRequest request, Model model , HttpSession session) {
 		model.addAttribute("user", new Users());
 		System.out.println("model.getAttribute(	)");
+		OfferController.isLoggedOut = false;
 		return "login";
 	}
 	@PostMapping("/login")
 	public String testconnexion(@ModelAttribute Users user, Model model ,HttpServletRequest request){
+		sessionRequest = request;
 		Users us = Mapper.Map2User(user);
 		model.addAttribute("user", us.getUsername() + " & " + us.getPassword());
 		/*System.out.println(us.getEmail());
@@ -57,10 +63,12 @@ public class UsersWS {
 				request.getSession().setAttribute("MY_SESSION_USERS", us.getEmail());
 				session = (String) request.getSession().getAttribute("MY_SESSION_USERS");
 				System.out.println(session);
+				OfferController.isLoggedOut = false;
 				return "landing_page";
 			} else {
 				//user = new Users();
 				msg="failed authentification";
+				OfferController.isLoggedOut = true;
 				return "redirect:/login";
 			}
 		} else {
@@ -70,6 +78,7 @@ public class UsersWS {
 				return "landing_page";
 			}else{
 				msg="failed authentification";
+				OfferController.isLoggedOut = true;
 				return "redirect:/login";
 			}
 		}
@@ -78,16 +87,20 @@ public class UsersWS {
 
 	@PostMapping("/signup")
 	public int save(@RequestBody Users users) {
+		OfferController.isLoggedOut = false;
 		return usersService.save(users);
 	}
-	@PostMapping("/destroy")
-	public String destroySession(HttpServletRequest request) {
+	@GetMapping("/destroy")
+	public ModelAndView destroySession(HttpServletRequest request) {
 		request.getSession().invalidate();
-		return "landing_page";
+		OfferController.isLoggedOut = true;
+
+		ModelAndView model = new ModelAndView("landing_page");
+		sessionRequest = request;
+		model.addObject("isLoggedOut", OfferController.isLoggedOut);
+		System.out.println("----------------------> Session : " + request.getSession(false) == null);
+
+		return model;
 	}
 
-
-	
-	
-	
 }
